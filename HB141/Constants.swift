@@ -22,3 +22,9 @@ struct ColorConstants {
     //#282828
     let textColor = UIColor(red: 40, green: 40, blue: 40, alpha: 1.0)
 }
+
+struct GoogleConstants {
+    static let mapsApiKey = "AIzaSyCz6Nc1-rEq4cyKcn2KdYb9Ck1n5_lMoFE"
+    
+    static let placesApiKey = "AIzaSyBs_NYH0F6kDuDHMcIEaqK_uK5Un9U7LfM"
+}
