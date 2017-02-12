@@ -14,6 +14,7 @@ class MapViewController : UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var pageViewContainer: UIView!
+    @IBOutlet weak var imageViewContainer: UIImageView!
     
     
     var locationManager : CLLocationManager!
@@ -28,7 +29,6 @@ class MapViewController : UIViewController {
         locationManager.requestWhenInUseAuthorization()
         
         mapView.addSubview(pageViewContainer)
-        
         placesClient = GMSPlacesClient.shared()
     }
     
@@ -44,13 +44,36 @@ class MapViewController : UIViewController {
                     let business = Business()
                     business.businessName = place.place.name
                     business.businessType = place.place.types.first
-                    // TODO: Add business image
+                    business.image = self.getBusinessImage(id: place.place.placeID)
                     businesses.append(business)
                     print("\(business.businessName!)")
                 }
             }
         }
         // TODO: Instantiate BusinessPageViewController with the array of businesses and then create a ViewController page for the first 5 or so 
+    }
+    
+    func getBusinessImage(id: String) -> UIImage {
+        var ret_pic: UIImage!
+        placesClient.lookUpPhotos(forPlaceID: id) { (photos, error) -> Void in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if let firstPhoto = photos?.results.first {
+                    self.placesClient.loadPlacePhoto(firstPhoto, callback: {
+                        (image, e) -> Void in
+                        if let e = e {
+                            print("Error: \(e.localizedDescription)")
+                        } else {
+                            ret_pic = image;
+                        }
+                    })
+                }
+            }
+            
+        }
+            
+        return ret_pic
     }
 }
 
