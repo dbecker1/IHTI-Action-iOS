@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="905" y="178"/>
         </scene>
-        <!--View Controller-->
+        <!--Business View Controller-->
         <scene sceneID="Hk4-er-n41">
             <objects>
-                <viewController id="vJS-Lq-QSg" sceneMemberID="viewController">
+                <viewController id="vJS-Lq-QSg" customClass="BusinessViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ORf-Bk-5sB"/>
                         <viewControllerLayoutGuide type="bottom" id="sEt-84-lW0"/>

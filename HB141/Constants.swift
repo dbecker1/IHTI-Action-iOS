@@ -27,4 +27,6 @@ struct GoogleConstants {
     static let mapsApiKey = "AIzaSyCz6Nc1-rEq4cyKcn2KdYb9Ck1n5_lMoFE"
     
     static let placesApiKey = "AIzaSyBs_NYH0F6kDuDHMcIEaqK_uK5Un9U7LfM"
+    
+    static let businessCount = 5
 }

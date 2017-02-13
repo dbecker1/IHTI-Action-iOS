@@ -12,6 +12,7 @@ import UIKit
 class Business : NSObject {
     var businessName : String?
     var businessType : String?
+    var placeID : String?
     // I know this violates the idea of separating model from view, but it simplifies things - Daniel
     var image : UIImage?
 }
