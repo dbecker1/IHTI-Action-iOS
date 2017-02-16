@@ -1,5 +1,5 @@
 //
-//  BusinessPageViewController.swift
+//  BusinessViewController.swift
 //  HB141
 //
 //  Created by Tyler Abney on 2/15/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BusinessPageViewController: UIPageViewController {
+class BusinessViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
