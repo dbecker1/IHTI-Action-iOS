@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4IG-Wp-zks">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4IG-Wp-zks">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                             <constraint firstAttribute="height" constant="221" id="geT-7B-kTe"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="WBy-Mk-jjJ" kind="embed" id="Tn7-ss-467"/>
+                                            <segue destination="TtO-c0-NUZ" kind="embed" id="Www-Xz-9lz"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -60,28 +60,18 @@
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="177.66116941529236"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="nla-AY-yC0">
+        <!--Business Page View Controller-->
+        <scene sceneID="MiG-86-9hb">
             <objects>
-                <viewController id="WBy-Mk-jjJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="R2T-B9-VKy"/>
-                        <viewControllerLayoutGuide type="bottom" id="Glb-Wq-XkE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qgj-g2-A4P">
-                        <rect key="frame" x="0.0" y="0.0" width="359" height="221"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu7-9K-b8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="TtO-c0-NUZ" customClass="BusinessPageViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91P-AT-odW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="178"/>
+            <point key="canvasLocation" x="906" y="178"/>
         </scene>
         <!--Business View Controller-->
         <scene sceneID="Hk4-er-n41">
             <objects>
-                <viewController id="vJS-Lq-QSg" customClass="BusinessViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusinessViewControllerID" id="vJS-Lq-QSg" customClass="BusinessViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ORf-Bk-5sB"/>
                         <viewControllerLayoutGuide type="bottom" id="sEt-84-lW0"/>
@@ -100,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="428-aR-sts">
-                                <rect key="frame" x="16" y="52" width="104.5" height="19.5"/>
+                                <rect key="frame" x="16" y="52" width="105" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -118,6 +108,11 @@
                             <constraint firstItem="RCb-PJ-Tro" firstAttribute="leading" secondItem="imP-V6-hWF" secondAttribute="leading" id="lnu-UN-4tq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageview" destination="RCb-PJ-Tro" id="QWe-34-47I"/>
+                        <outlet property="name" destination="57x-oj-2os" id="11b-L7-aky"/>
+                        <outlet property="type" destination="428-aR-sts" id="a7n-7O-Ib8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDK-yw-xyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

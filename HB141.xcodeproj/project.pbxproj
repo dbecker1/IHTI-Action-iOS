@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
+		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
+		F6E6A4521E5632180075FA82 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E6A4511E5632180075FA82 /* house.png */; };
 		FD2928951E51596A0060A544 /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2928941E51596A0060A544 /* GoogleServices.swift */; };
 		FD570E0B1E49289E00D8904C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD570E0A1E49289E00D8904C /* Constants.swift */; };
 		FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABA83D1E47C56600B817DA /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 		0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
+		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
+		F6C221931E5559E0004A532C /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessViewController.swift; path = Controllers/BusinessViewController.swift; sourceTree = "<group>"; };
+		F6E6A4511E5632180075FA82 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = SOURCE_ROOT; };
 		FD2928941E51596A0060A544 /* GoogleServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleServices.swift; sourceTree = "<group>"; };
 		FD570E0A1E49289E00D8904C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDABA83A1E47C56600B817DA /* HB141.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HB141.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +104,7 @@
 		FDABA83C1E47C56600B817DA /* HB141 */ = {
 			isa = PBXGroup;
 			children = (
+				F6E6A4511E5632180075FA82 /* house.png */,
 				FD2928931E5159580060A544 /* Services */,
 				FDC517371E4D77E200C5D430 /* Models */,
 				FDABA8521E47C6B200B817DA /* Storyboards */,
@@ -115,6 +122,8 @@
 			children = (
 				FDABA8501E47C67400B817DA /* ViewController.swift */,
 				FDC517321E4D465D00C5D430 /* MapViewController.swift */,
+				F6C221911E55598A004A532C /* BusinessPageViewController.swift */,
+				F6C221931E5559E0004A532C /* BusinessViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */,
+				F6E6A4521E5632180075FA82 /* house.png in Resources */,
 				FDABA8451E47C56600B817DA /* Assets.xcassets in Resources */,
 				FDABA8431E47C56600B817DA /* Main.storyboard in Resources */,
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
@@ -267,7 +277,9 @@
 			files = (
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
+				F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */,
 				FD570E0B1E49289E00D8904C /* Constants.swift in Sources */,
+				F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */,
 				FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */,
 				FD2928951E51596A0060A544 /* GoogleServices.swift in Sources */,
 				FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */,
