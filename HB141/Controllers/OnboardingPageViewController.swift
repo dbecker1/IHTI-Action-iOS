@@ -10,6 +10,27 @@ import UIKit
 
 class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
     
+    var prevColor = ColorConstants.onboarding0Color
+    var thisColor = ColorConstants.onboarding1Color
+    var nextColor = ColorConstants.onboarding2Color
+    
+    var currentIndex:Int {
+        get {
+            return orderedViewControllers.index(of: self.viewControllers!.first!)!
+        }
+        
+        set {
+            guard newValue >= 0,
+                newValue < orderedViewControllers.count else {
+                    return
+            }
+            
+            let vc = orderedViewControllers[newValue]
+            let direction:UIPageViewControllerNavigationDirection = newValue > currentIndex ? .forward : .reverse
+            self.setViewControllers([vc], direction: direction, animated: true, completion: nil)
+        }
+    }
+    
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newOnboardingViewController(identifier: "WelcomeViewController"),
                 self.newOnboardingViewController(identifier: "SummaryViewController"),
@@ -39,7 +60,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
             }
         }
         
-        self.view.backgroundColor = blendColors(from: UIColor.blue, to: UIColor.red, ratio: 0.5);
+        self.view.backgroundColor = thisColor
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,8 +72,42 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         let point = scrollView.contentOffset
         var percentComplete: CGFloat
         percentComplete = (point.x - view.frame.size.width)/view.frame.size.width
-        NSLog("percentComplete: %f", percentComplete)
-        
+        if (percentComplete < 0) {
+            let modPercentComplete: CGFloat = percentComplete * -1;
+            self.view.backgroundColor = blendColors(from: thisColor, to: prevColor, ratio: modPercentComplete);
+            NSLog("modPercentComplete: %f", modPercentComplete)
+        } else if (percentComplete > 0) {
+            self.view.backgroundColor = blendColors(from: thisColor, to: nextColor, ratio: percentComplete);
+            NSLog("percentComplete: %f", percentComplete)
+        } else {
+            switch currentIndex {
+            case 0:
+                prevColor = ColorConstants.onboarding0Color
+                thisColor = ColorConstants.onboarding1Color
+                nextColor = ColorConstants.onboarding2Color
+            case 1:
+                prevColor = ColorConstants.onboarding1Color
+                thisColor = ColorConstants.onboarding2Color
+                nextColor = ColorConstants.onboarding3Color
+            case 2:
+                prevColor = ColorConstants.onboarding2Color
+                thisColor = ColorConstants.onboarding3Color
+                nextColor = ColorConstants.onboarding4Color
+            case 3:
+                prevColor = ColorConstants.onboarding3Color
+                thisColor = ColorConstants.onboarding4Color
+                nextColor = ColorConstants.onboarding5Color
+            case 4:
+                prevColor = ColorConstants.onboarding4Color
+                thisColor = ColorConstants.onboarding5Color
+                nextColor = ColorConstants.onboarding6Color
+            default:
+                prevColor = ColorConstants.onboarding0Color
+                thisColor = ColorConstants.onboarding0Color
+                nextColor = ColorConstants.onboarding0Color
+            }
+            print("Index: " + String(currentIndex))
+        }
     }
     
     func blendColors(from: UIColor, to: UIColor, ratio: CGFloat) -> UIColor {
@@ -75,10 +130,10 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
             let r: CGFloat = toRed * ratio + fromRed * inverseRatio;
             let g: CGFloat = toGreen * ratio + fromGreen * inverseRatio;
             let b: CGFloat = toBlue * ratio + fromBlue * inverseRatio;
-            
-            return UIColor(red: r, green: g, blue: b, alpha: 255.0);
+
+            return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1.0);
         } else {
-            return UIColor(red: 0, green: 0, blue: 0, alpha: 255.0);
+            return UIColor(red: 0, green: 0, blue: 0, alpha: 1.0);
         }
     }
     
@@ -122,4 +177,11 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex];
     }
     
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return orderedViewControllers.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return currentIndex
+    }
 }
