@@ -10,19 +10,20 @@ import UIKit
 
 class BusinessViewController: UIViewController {
 
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var type: UILabel!
-    @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
-    var temp_name : String = ""
-    var temp_type: String = ""
-    var temp_image: UIImage!
+    var name : String = ""
+    var type: String = ""
+    var image: UIImage!
+    var index: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = temp_name
-        type.text = temp_type
-        imageview.image = temp_image
+        nameLabel.text = name
+        typeLabel.text = type
+        imageView.image = image
         
         // Do any additional setup after loading the view.
     }

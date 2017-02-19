@@ -14,8 +14,8 @@ class MapViewController : UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var pageViewContainer: UIView!
-    @IBOutlet weak var imageViewContainer: UIImageView!
     
+    var pageViewController : BusinessPageViewController?
     
     var locationManager : CLLocationManager!
     
@@ -27,10 +27,17 @@ class MapViewController : UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        mapView.addSubview(pageViewContainer)
+        self.view.addSubview(pageViewContainer)
+        self.view.bringSubview(toFront: pageViewContainer)
         
         let services = GooglePlacesService(delegate: self)
         services.loadBusinesses()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "Embedded PageViewController") {
+            self.pageViewController = segue.destination as? BusinessPageViewController
+        }
     }
 }
 
@@ -61,6 +68,8 @@ extension MapViewController : GooglePlacesDelegate {
     func foundBusinesses(businesses: [Business]) {
         print(businesses)
         
-        // Here instantiate the PageViewController with the array of businesses
+        if let pageController = pageViewController {
+            pageController.setBusinesses(newBusinesses: businesses)
+        }
     }
 }

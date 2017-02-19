@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4IG-Wp-zks">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4IG-Wp-zks">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,29 +24,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zD5-nb-kOi" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-5l-cwd">
-                                        <rect key="frame" x="8" y="438" width="359" height="221"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="221" id="geT-7B-kTe"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="TtO-c0-NUZ" kind="embed" id="Www-Xz-9lz"/>
-                                        </connections>
-                                    </containerView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="D5X-5l-cwd" secondAttribute="bottom" constant="8" id="1P2-bK-TzH"/>
-                                    <constraint firstItem="D5X-5l-cwd" firstAttribute="leading" secondItem="zD5-nb-kOi" secondAttribute="leading" constant="8" id="j0n-25-HJD"/>
-                                    <constraint firstAttribute="trailing" secondItem="D5X-5l-cwd" secondAttribute="trailing" constant="8" id="pgr-Pi-v4t"/>
-                                </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-5l-cwd">
+                                <rect key="frame" x="8" y="436" width="359" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="221" id="geT-7B-kTe"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="TtO-c0-NUZ" kind="embed" identifier="Embedded PageViewController" id="Www-Xz-9lz"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zD5-nb-kOi" firstAttribute="bottom" secondItem="sAK-mz-Vw0" secondAttribute="top" id="BOD-Qf-krT"/>
-                            <constraint firstItem="zD5-nb-kOi" firstAttribute="top" secondItem="I8F-4f-Fyr" secondAttribute="top" id="Wba-hH-dWf"/>
+                            <constraint firstItem="zD5-nb-kOi" firstAttribute="top" secondItem="2V3-Po-DK6" secondAttribute="bottom" constant="-20" id="DRC-nY-1lm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D5X-5l-cwd" secondAttribute="trailing" constant="-8" id="MlH-BE-Rl5"/>
+                            <constraint firstItem="sAK-mz-Vw0" firstAttribute="top" secondItem="D5X-5l-cwd" secondAttribute="bottom" constant="10" id="Pk3-4S-erW"/>
+                            <constraint firstItem="D5X-5l-cwd" firstAttribute="leading" secondItem="I8F-4f-Fyr" secondAttribute="leadingMargin" constant="-8" id="Zl3-6X-YXa"/>
                             <constraint firstAttribute="trailing" secondItem="zD5-nb-kOi" secondAttribute="trailing" id="dxs-Pj-tfF"/>
                             <constraint firstItem="zD5-nb-kOi" firstAttribute="leading" secondItem="I8F-4f-Fyr" secondAttribute="leading" id="gcY-gf-BMh"/>
                         </constraints>
@@ -63,7 +59,7 @@
         <!--Business Page View Controller-->
         <scene sceneID="MiG-86-9hb">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="TtO-c0-NUZ" customClass="BusinessPageViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TtO-c0-NUZ" customClass="BusinessPageViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91P-AT-odW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="906" y="178"/>
@@ -85,12 +81,14 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57x-oj-2os">
                                 <rect key="frame" x="16" y="20" width="139" height="24"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="428-aR-sts">
                                 <rect key="frame" x="16" y="52" width="105" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -109,9 +107,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageview" destination="RCb-PJ-Tro" id="QWe-34-47I"/>
-                        <outlet property="name" destination="57x-oj-2os" id="11b-L7-aky"/>
-                        <outlet property="type" destination="428-aR-sts" id="a7n-7O-Ib8"/>
+                        <outlet property="imageView" destination="RCb-PJ-Tro" id="1hD-gV-0uT"/>
+                        <outlet property="nameLabel" destination="57x-oj-2os" id="HSs-9w-4oL"/>
+                        <outlet property="typeLabel" destination="428-aR-sts" id="1QN-09-mC1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDK-yw-xyN" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,80 +8,68 @@
 
 import UIKit
 
-class BusinessPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class BusinessPageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
-    var all_business_array : [Business?] = []
-    var to_display_business_array : [BusinessViewController] = []
-
+    var businesses : [Business] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource = self
-        delegate = self
+        self.dataSource = self
         
-        fill_array_test()
-        
-        to_display_business_array =  create_business_cards(array: all_business_array)
-        var first : [BusinessViewController] = []
-        first.append(to_display_business_array[0])
-        setViewControllers(first, direction: UIPageViewControllerNavigationDirection.forward, animated: true)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //self.setViewControllers([getViewController(atIndex: 0)], direction: .forward, animated: true, completion: nil)
     }
     
-    func create_business_cards(array: [Business?]) -> [BusinessViewController] {
-        let story = UIStoryboard(name: "Map", bundle: nil)
-        var ret_array : [BusinessViewController] = []
+    func setBusinesses(newBusinesses : [Business]) {
+        self.businesses = newBusinesses
         
-        for i in 0...4 {
-            if all_business_array[i] != nil {
-                let bvc = story.instantiateViewController(withIdentifier: "BusinessViewControllerID") as! BusinessViewController
-                bvc.temp_name = (array[i]?.businessName)!
-                bvc.temp_type = (array[i]?.businessType)!
-                bvc.temp_image = array[i]?.image
-                ret_array.append(bvc)
-            }
-        }
-        return ret_array
+        self.setViewControllers([getViewController(atIndex: 0)], direction: .forward, animated: true, completion: nil)
     }
     
-    func fill_array_test() {
+    func getViewController(atIndex index: Int) -> BusinessViewController {
+        let businessViewController = self.storyboard?.instantiateViewController(withIdentifier: "BusinessViewControllerID") as! BusinessViewController
         
-        for _ in 0...4 {
-            let new = Business()
-            new.businessName = "fake name"
-            new.businessType = "fake type"
-            new.image = UIImage(named: "house.png")
-            all_business_array.append(new)
-        }
+        businessViewController.name = businesses[index].businessName!
+        businessViewController.type = businesses[index].businessType!
+        businessViewController.image = businesses[index].image
+        businessViewController.index = index
         
+        return businessViewController
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        print("AFTER PAGE\n")
-        let index = to_display_business_array.index(of: viewController as! BusinessViewController)!
-        if index == 4 {
+// MARK:- UIPageViewControllerDataSource Implementation
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let pageContent: BusinessViewController = viewController as! BusinessViewController
+        
+        var index = pageContent.index
+        
+        if ((index == 0) || (index == NSNotFound)) {
             return nil
-        } else {
-            return to_display_business_array[index+1]
         }
+        
+        index -= 1
+        return getViewController(atIndex: index)
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        print("BEFORE PAGE\n")
-        let index = to_display_business_array.index(of: viewController as! BusinessViewController)!
-        if index == 0 {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let pageContent: BusinessViewController = viewController as! BusinessViewController
+        
+        var index = pageContent.index
+        
+        if (index == NSNotFound) {
             return nil
-        } else {
-            return to_display_business_array[index-1]
         }
+        
+        index += 1
+        if (index == businesses.count) {
+            return nil
+        }
+        return getViewController(atIndex: index)
     }
+    
+    
+    
     
     
     /*

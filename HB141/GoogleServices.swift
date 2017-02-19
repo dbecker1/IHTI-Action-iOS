@@ -30,8 +30,8 @@ class GooglePlacesService : NSObject {
                 for i in 0...(GoogleConstants.businessCount - 1) {
                     let place = placeList.likelihoods.remove(at: i)
                     let business = Business()
-                    business.businessName = place.place.name
-                    business.businessType = place.place.types.first
+                    business.businessName = place.place.name.capitalized
+                    business.businessType = place.place.types.first?.capitalized
                     business.placeID = place.place.placeID
                     self.businesses.append(business)
                     print("\(business.businessName!)")
