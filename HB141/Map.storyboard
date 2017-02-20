@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4IG-Wp-zks">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4IG-Wp-zks">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="9eV-kX-Dbz">
             <objects>
-                <viewController id="4IG-Wp-zks" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="4IG-Wp-zks" customClass="MapViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2V3-Po-DK6"/>
                         <viewControllerLayoutGuide type="bottom" id="sAK-mz-Vw0"/>
@@ -21,20 +22,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8g-uQ-PEW">
-                                <rect key="frame" x="166" y="323" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zD5-nb-kOi" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-5l-cwd">
+                                <rect key="frame" x="8" y="436" width="359" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="221" id="geT-7B-kTe"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="TtO-c0-NUZ" kind="embed" identifier="Embedded PageViewController" id="Www-Xz-9lz"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zD5-nb-kOi" firstAttribute="bottom" secondItem="sAK-mz-Vw0" secondAttribute="top" id="BOD-Qf-krT"/>
+                            <constraint firstItem="zD5-nb-kOi" firstAttribute="top" secondItem="2V3-Po-DK6" secondAttribute="bottom" constant="-20" id="DRC-nY-1lm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D5X-5l-cwd" secondAttribute="trailing" constant="-8" id="MlH-BE-Rl5"/>
+                            <constraint firstItem="sAK-mz-Vw0" firstAttribute="top" secondItem="D5X-5l-cwd" secondAttribute="bottom" constant="10" id="Pk3-4S-erW"/>
+                            <constraint firstItem="D5X-5l-cwd" firstAttribute="leading" secondItem="I8F-4f-Fyr" secondAttribute="leadingMargin" constant="-8" id="Zl3-6X-YXa"/>
+                            <constraint firstAttribute="trailing" secondItem="zD5-nb-kOi" secondAttribute="trailing" id="dxs-Pj-tfF"/>
+                            <constraint firstItem="zD5-nb-kOi" firstAttribute="leading" secondItem="I8F-4f-Fyr" secondAttribute="leading" id="gcY-gf-BMh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="zD5-nb-kOi" id="Yqf-7l-Y27"/>
+                        <outlet property="pageViewContainer" destination="D5X-5l-cwd" id="qs3-Ho-not"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yR3-23-d1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="177.66116941529236"/>
+        </scene>
+        <!--Business Page View Controller-->
+        <scene sceneID="MiG-86-9hb">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TtO-c0-NUZ" customClass="BusinessPageViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91P-AT-odW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="178"/>
+        </scene>
+        <!--Business View Controller-->
+        <scene sceneID="Hk4-er-n41">
+            <objects>
+                <viewController storyboardIdentifier="BusinessViewControllerID" id="vJS-Lq-QSg" customClass="BusinessViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ORf-Bk-5sB"/>
+                        <viewControllerLayoutGuide type="bottom" id="sEt-84-lW0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="imP-V6-hWF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RCb-PJ-Tro">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57x-oj-2os">
+                                <rect key="frame" x="16" y="20" width="139" height="24"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="428-aR-sts">
+                                <rect key="frame" x="16" y="52" width="105" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RCb-PJ-Tro" firstAttribute="top" secondItem="imP-V6-hWF" secondAttribute="top" id="2kO-50-CLq"/>
+                            <constraint firstItem="57x-oj-2os" firstAttribute="leading" secondItem="imP-V6-hWF" secondAttribute="leadingMargin" id="BVo-pC-OXA"/>
+                            <constraint firstItem="428-aR-sts" firstAttribute="top" secondItem="57x-oj-2os" secondAttribute="bottom" constant="8" symbolic="YES" id="Fu4-hf-LTo"/>
+                            <constraint firstItem="RCb-PJ-Tro" firstAttribute="bottom" secondItem="sEt-84-lW0" secondAttribute="top" id="KA8-z0-0ct"/>
+                            <constraint firstItem="428-aR-sts" firstAttribute="leading" secondItem="57x-oj-2os" secondAttribute="leading" id="M2v-xu-J9I"/>
+                            <constraint firstAttribute="trailing" secondItem="RCb-PJ-Tro" secondAttribute="trailing" id="QdI-z8-4Wx"/>
+                            <constraint firstItem="57x-oj-2os" firstAttribute="top" secondItem="ORf-Bk-5sB" secondAttribute="bottom" id="lYs-q7-fp9"/>
+                            <constraint firstItem="RCb-PJ-Tro" firstAttribute="leading" secondItem="imP-V6-hWF" secondAttribute="leading" id="lnu-UN-4tq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="RCb-PJ-Tro" id="1hD-gV-0uT"/>
+                        <outlet property="nameLabel" destination="57x-oj-2os" id="HSs-9w-4oL"/>
+                        <outlet property="typeLabel" destination="428-aR-sts" id="1QN-09-mC1"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yR3-23-d1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDK-yw-xyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="178"/>
+            <point key="canvasLocation" x="1636" y="377.36131934032989"/>
         </scene>
     </scenes>
 </document>
