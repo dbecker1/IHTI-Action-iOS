@@ -33,6 +33,7 @@ class GooglePlacesService : NSObject {
                     business.businessName = place.place.name.capitalized
                     business.businessType = place.place.types.first?.capitalized
                     business.placeID = place.place.placeID
+                    business.businessAddress = place.place.formattedAddress
                     self.businesses.append(business)
                     print("\(business.businessName!)")
                 }
