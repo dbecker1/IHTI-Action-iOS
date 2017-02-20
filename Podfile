@@ -8,4 +8,5 @@ target 'HB141' do
   # Pods for HB141
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Firebase/Core'
 end

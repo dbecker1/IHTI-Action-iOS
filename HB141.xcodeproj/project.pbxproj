@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FB26A976EE59F091E906A79 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */; };
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
 		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
 		FD2928951E51596A0060A544 /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2928941E51596A0060A544 /* GoogleServices.swift */; };
@@ -50,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB26A976EE59F091E906A79 /* Pods_HB141.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
