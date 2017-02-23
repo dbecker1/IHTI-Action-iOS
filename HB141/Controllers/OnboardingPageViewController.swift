@@ -14,6 +14,13 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
     var thisColor = ColorConstants.onboarding1Color
     var nextColor = ColorConstants.onboarding2Color
     
+    var prevHeight:CGFloat = UIScreen.main.bounds.size.height
+    var thisHeight:CGFloat = UIScreen.main.bounds.size.height
+    var nextHeight:CGFloat = UIScreen.main.bounds.size.height
+    
+    var titleBackground = UIImageView();
+    var thisWidth: CGFloat = 0
+    
     var currentIndex:Int {
         get {
             return orderedViewControllers.index(of: self.viewControllers!.first!)!
@@ -61,6 +68,22 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         }
         
         self.view.backgroundColor = thisColor
+        titleBackground.backgroundColor = UIColor.white
+        for view in orderedViewControllers[0].view.subviews as [UIView] {
+            if let mainTitle = view as? UILabel {
+                let titleHeight = (mainTitle.frame.maxY - mainTitle.frame.height)*2 + mainTitle.frame.height
+                let titleWidth = UIScreen.main.bounds.size.width
+                thisHeight = titleHeight
+                thisWidth = titleWidth
+                titleBackground.frame = CGRect(x: 0, y: 0, width: titleWidth, height: titleHeight)
+            }
+        }
+        for view in orderedViewControllers[1].view.subviews as [UIView] {
+            if let atitle = view as? UILabel {
+                nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+            }
+        }
+        self.view.insertSubview(titleBackground, at: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,36 +98,127 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         if (percentComplete < 0) {
             let modPercentComplete: CGFloat = percentComplete * -1;
             self.view.backgroundColor = blendColors(from: thisColor, to: prevColor, ratio: modPercentComplete);
-            NSLog("modPercentComplete: %f", modPercentComplete)
+            titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: blendHeight(from: thisHeight, to: prevHeight, ratio: modPercentComplete))
+            //NSLog("modPercentComplete: %f", modPercentComplete)
         } else if (percentComplete > 0) {
             self.view.backgroundColor = blendColors(from: thisColor, to: nextColor, ratio: percentComplete);
-            NSLog("percentComplete: %f", percentComplete)
+            titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: blendHeight(from: thisHeight, to: nextHeight, ratio: percentComplete))
+            //NSLog("percentComplete: %f", percentComplete)
         } else {
             switch currentIndex {
-            case 0:
-                prevColor = ColorConstants.onboarding0Color
-                thisColor = ColorConstants.onboarding1Color
-                nextColor = ColorConstants.onboarding2Color
-            case 1:
-                prevColor = ColorConstants.onboarding1Color
-                thisColor = ColorConstants.onboarding2Color
-                nextColor = ColorConstants.onboarding3Color
-            case 2:
-                prevColor = ColorConstants.onboarding2Color
-                thisColor = ColorConstants.onboarding3Color
-                nextColor = ColorConstants.onboarding4Color
-            case 3:
-                prevColor = ColorConstants.onboarding3Color
-                thisColor = ColorConstants.onboarding4Color
-                nextColor = ColorConstants.onboarding5Color
-            case 4:
-                prevColor = ColorConstants.onboarding4Color
-                thisColor = ColorConstants.onboarding5Color
-                nextColor = ColorConstants.onboarding6Color
-            default:
-                prevColor = ColorConstants.onboarding0Color
-                thisColor = ColorConstants.onboarding0Color
-                nextColor = ColorConstants.onboarding0Color
+                case 0:
+                    //color
+                    prevColor = ColorConstants.onboarding0Color
+                    thisColor = ColorConstants.onboarding1Color
+                    nextColor = ColorConstants.onboarding2Color
+                    
+                    //height
+                    //prevHeight = UIScreen.main.bounds.size.height
+                    for view in orderedViewControllers[0].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
+                        }
+                    }
+                    for view in orderedViewControllers[1].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                case 1:
+                    //color
+                    prevColor = ColorConstants.onboarding1Color
+                    thisColor = ColorConstants.onboarding2Color
+                    nextColor = ColorConstants.onboarding3Color
+                
+                    //height
+                    for view in orderedViewControllers[0].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                    for view in orderedViewControllers[1].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
+                        }
+                    }
+                    for view in orderedViewControllers[2].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                case 2:
+                    //color
+                    prevColor = ColorConstants.onboarding2Color
+                    thisColor = ColorConstants.onboarding3Color
+                    nextColor = ColorConstants.onboarding4Color
+                
+                    //height
+                    for view in orderedViewControllers[1].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                    for view in orderedViewControllers[2].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
+                        }
+                    }
+                    for view in orderedViewControllers[3].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                case 3:
+                    //color
+                    prevColor = ColorConstants.onboarding3Color
+                    thisColor = ColorConstants.onboarding4Color
+                    nextColor = ColorConstants.onboarding5Color
+                
+                    //height
+                    for view in orderedViewControllers[2].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                    for view in orderedViewControllers[3].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
+                        }
+                    }
+                    for view in orderedViewControllers[4].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                case 4:
+                    //color
+                    prevColor = ColorConstants.onboarding4Color
+                    thisColor = ColorConstants.onboarding5Color
+                    nextColor = ColorConstants.onboarding6Color
+                
+                    //height
+                    for view in orderedViewControllers[3].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                    for view in orderedViewControllers[4].view.subviews as [UIView] {
+                        if let atitle = view as? UILabel {
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                        }
+                    }
+                    //nextHeight = UIScreen.main.bounds.size.height
+                default:
+                    prevColor = ColorConstants.onboarding0Color
+                    thisColor = ColorConstants.onboarding0Color
+                    nextColor = ColorConstants.onboarding0Color
             }
             print("Index: " + String(currentIndex))
         }
@@ -135,6 +249,13 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         } else {
             return UIColor(red: 0, green: 0, blue: 0, alpha: 1.0);
         }
+    }
+    
+    func blendHeight(from: CGFloat, to: CGFloat, ratio: CGFloat) -> CGFloat {
+        let deltaX = (to - from) * ratio;
+        let calcHeight = from + deltaX
+        //print("Calculated Height: \(calcHeight)")
+        return calcHeight
     }
     
 }
