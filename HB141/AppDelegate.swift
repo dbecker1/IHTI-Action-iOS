@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FIRApp.configure()
+        var ref: FIRDatabaseReference!
+        FIRAuth.auth()?.signIn(withEmail: "dbecker.fl@gmail.com", password: "testpass1", completion: { (user, error) in
+            print("Authentication successful!")
+        })
+        ref = FIRDatabase.database().reference()
         
         GMSServices.provideAPIKey(GoogleConstants.mapsApiKey)
         
