@@ -18,14 +18,27 @@ class BusinessViewController: UIViewController {
     var type: String = ""
     var image: UIImage!
     var index: Int = 0
+    var addr: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = name
         typeLabel.text = type
         imageView.image = image
+
+        imageView.isUserInteractionEnabled = true
+        let singletap = UITapGestureRecognizer(target: self, action: #selector(showReport))
+        imageView.addGestureRecognizer(singletap)
         
         // Do any additional setup after loading the view.
+    }
+    
+    func showReport() {
+        let newView = self.storyboard?.instantiateViewController(withIdentifier: "ReportID") as! ReportController
+        newView.preload_name = name
+        newView.preload_addr = addr
+        self.present(newView, animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {

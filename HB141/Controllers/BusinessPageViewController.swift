@@ -32,10 +32,12 @@ class BusinessPageViewController: UIPageViewController, UIPageViewControllerData
         businessViewController.name = businesses[index].businessName!
         businessViewController.type = businesses[index].businessType!
         businessViewController.image = businesses[index].image
+        businessViewController.addr = businesses[index].businessAddress
         businessViewController.index = index
         
         return businessViewController
     }
+    
     
 // MARK:- UIPageViewControllerDataSource Implementation
     
