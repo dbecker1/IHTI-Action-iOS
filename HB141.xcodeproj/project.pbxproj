@@ -25,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +60,6 @@
 		4CC7D16B68C57684DB2ED8CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
