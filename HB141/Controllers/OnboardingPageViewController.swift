@@ -19,7 +19,11 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
     var nextHeight:CGFloat = UIScreen.main.bounds.size.height
     
     var titleBackground = UIImageView();
+    var progressButton = UIButton();
     var thisWidth: CGFloat = 0
+    
+    var multiplier: CGFloat = 1.44
+    var buffer:CGFloat = 0
     
     var currentIndex:Int {
         get {
@@ -55,6 +59,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         dataSource = self;
         
         if let firstViewController = orderedViewControllers.first {
@@ -68,10 +73,14 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         }
         
         self.view.backgroundColor = thisColor
+        
+        progressButton.center = CGPoint(x: view.bounds.maxX - 50, y: view.bounds.maxY - 50)
+        progressButton.setTitle("Skip", for: UIControlState.normal);
+        progressButton.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleTopMargin, UIViewAutoresizing.flexibleBottomMargin]
         titleBackground.backgroundColor = UIColor.white
         for view in orderedViewControllers[0].view.subviews as [UIView] {
             if let mainTitle = view as? UILabel {
-                let titleHeight = (mainTitle.frame.maxY - mainTitle.frame.height)*2 + mainTitle.frame.height
+                let titleHeight = (mainTitle.frame.maxY - mainTitle.frame.height)*multiplier + mainTitle.frame.height + buffer
                 let titleWidth = UIScreen.main.bounds.size.width
                 thisHeight = titleHeight
                 thisWidth = titleWidth
@@ -80,10 +89,12 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         }
         for view in orderedViewControllers[1].view.subviews as [UIView] {
             if let atitle = view as? UILabel {
-                nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
+                //print("Height: \(nextHeight)");
             }
         }
         self.view.insertSubview(titleBackground, at: 0)
+        self.view.addSubview(progressButton)
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,14 +127,14 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                     //prevHeight = UIScreen.main.bounds.size.height
                     for view in orderedViewControllers[0].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
-                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                             titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
                         }
                     }
                     for view in orderedViewControllers[1].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                 case 1:
@@ -135,18 +146,18 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                     //height
                     for view in orderedViewControllers[0].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                     for view in orderedViewControllers[1].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                             titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
                         }
                     }
                     for view in orderedViewControllers[2].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                 case 2:
@@ -158,18 +169,18 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                     //height
                     for view in orderedViewControllers[1].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                     for view in orderedViewControllers[2].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                             titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
                         }
                     }
                     for view in orderedViewControllers[3].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                 case 3:
@@ -181,18 +192,18 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                     //height
                     for view in orderedViewControllers[2].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                     for view in orderedViewControllers[3].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                             titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
                         }
                     }
                     for view in orderedViewControllers[4].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                 case 4:
@@ -204,14 +215,14 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                     //height
                     for view in orderedViewControllers[3].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            prevHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                     for view in orderedViewControllers[4].view.subviews as [UIView] {
                         if let atitle = view as? UILabel {
-                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            thisHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                             titleBackground.frame = CGRect(x: 0, y: 0, width: thisWidth, height: thisHeight)
-                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*2 + atitle.frame.height
+                            nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
                     //nextHeight = UIScreen.main.bounds.size.height
@@ -220,7 +231,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                     thisColor = ColorConstants.onboarding0Color
                     nextColor = ColorConstants.onboarding0Color
             }
-            print("Index: " + String(currentIndex))
+            //print("Index: " + String(currentIndex))
         }
     }
     
@@ -304,5 +315,17 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return currentIndex
+    }
+}
+
+extension UIView {
+    final func sizeToFitCustom() {
+        var w: CGFloat = 0,
+        h: CGFloat = 0
+        for view in subviews {
+            if view.frame.origin.x + view.frame.width > w { w = view.frame.origin.x + view.frame.width }
+            if view.frame.origin.y + view.frame.height > h { h = view.frame.origin.y + view.frame.height }
+        }
+        frame.size = CGSize(width: w, height: h)
     }
 }

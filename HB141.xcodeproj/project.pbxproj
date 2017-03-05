@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */; };
+		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
+		E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */; };
 		FD570E0B1E49289E00D8904C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD570E0A1E49289E00D8904C /* Constants.swift */; };
 		FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABA83D1E47C56600B817DA /* AppDelegate.swift */; };
 		FDABA8431E47C56600B817DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDABA8411E47C56600B817DA /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = Controllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
+		E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 800.ttf"; sourceTree = "<group>"; };
 		FD570E0A1E49289E00D8904C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDABA83A1E47C56600B817DA /* HB141.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HB141.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABA83D1E47C56600B817DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				FDABA8441E47C56600B817DA /* Assets.xcassets */,
 				FDABA8491E47C56600B817DA /* Info.plist */,
 				FD570E0A1E49289E00D8904C /* Constants.swift */,
+				E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */,
+				E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */,
 			);
 			path = HB141;
 			sourceTree = "<group>";
@@ -159,8 +165,10 @@
 				FDABA8451E47C56600B817DA /* Assets.xcassets in Resources */,
 				FDABA8431E47C56600B817DA /* Main.storyboard in Resources */,
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
+				E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */,
 				FDEA130C1E47FC5100868634 /* Onboarding.storyboard in Resources */,
 				FDEA13101E47FCEF00868634 /* Map.storyboard in Resources */,
+				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
