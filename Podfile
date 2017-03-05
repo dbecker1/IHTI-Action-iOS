@@ -12,4 +12,5 @@ target 'HB141' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Toast-Swift', '~> 2.0.0'
 end

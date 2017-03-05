@@ -16,8 +16,6 @@ class BusinessPageViewController: UIPageViewController, UIPageViewControllerData
         super.viewDidLoad()
         
         self.dataSource = self
-        
-        //self.setViewControllers([getViewController(atIndex: 0)], direction: .forward, animated: true, completion: nil)
     }
     
     func setBusinesses(newBusinesses : [Business]) {
@@ -29,10 +27,7 @@ class BusinessPageViewController: UIPageViewController, UIPageViewControllerData
     func getViewController(atIndex index: Int) -> BusinessViewController {
         let businessViewController = self.storyboard?.instantiateViewController(withIdentifier: "BusinessViewControllerID") as! BusinessViewController
         
-        businessViewController.name = businesses[index].businessName!
-        businessViewController.type = businesses[index].businessType!
-        businessViewController.image = businesses[index].image
-        businessViewController.addr = businesses[index].businessAddress
+        businessViewController.business = businesses[index]
         businessViewController.index = index
         
         return businessViewController

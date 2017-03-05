@@ -48,6 +48,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
+  - Toast-Swift (2.0.0)
 
 DEPENDENCIES:
   - Firebase
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - Firebase/Database
   - GoogleMaps
   - GooglePlaces
+  - Toast-Swift (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Firebase: 8e99eb1ff553ad5bcc6072cc3d925bb89c1244d6
@@ -70,7 +72,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: 552ae95de89bef4a0e76ab117631246d7b05ab41
+PODFILE CHECKSUM: 136c7a9035d2ece36c575e6b672847f8dda82686
 
 COCOAPODS: 1.2.0
