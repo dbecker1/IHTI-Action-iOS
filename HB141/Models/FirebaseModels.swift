@@ -36,19 +36,12 @@ class Establishment : FIRDataObject {
 
 class FIRDataObject: NSObject {
     
-//    var snapshot: FIRDataSnapshot?
-//    var key: String { return snapshot!.key }
-//    var ref: FIRDatabaseReference { return snapshot!.ref }
-    
     required init(snapshot: FIRDataSnapshot) {
-        
-        //self.snapshot = snapshot
         
         super.init()
         
         for child in snapshot.children.allObjects as? [FIRDataSnapshot] ?? [] {
             let key = String(child.key.characters.filter { !" \n\t\r".characters.contains($0) })
-            print(key)
             if responds(to: Selector(key)) {
                 if child.value is Bool {
                     let boolValue = child.value as! Bool
