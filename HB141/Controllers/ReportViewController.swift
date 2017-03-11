@@ -38,6 +38,10 @@ class ReportViewController: UIViewController {
         public_switch.addTarget(self, action: #selector(disableNotPosted), for: UIControlEvents.valueChanged)
         restroom_switch.addTarget(self, action: #selector(disableNotPosted), for: UIControlEvents.valueChanged)
         notposted_switch.addTarget(self, action: #selector(disablePublicAndRestroom), for: UIControlEvents.valueChanged)
+        
+        self.title = "New Report"
+        
+        navigationItem.backBarButtonItem?.title = "Back"
 
         // Do any additional setup after loading the view.
     }

@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import FontAwesome_swift
 
 class MapViewController : UIViewController {
     
@@ -32,12 +33,30 @@ class MapViewController : UIViewController {
         
         let services = GooglePlacesService(delegate: self)
         services.loadBusinesses()
+        
+        self.title = "Choose Location"
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white;
+        navigationItem.leftBarButtonItem = BaseNavigationController.getMenuButton()
+        navigationItem.backBarButtonItem = BaseNavigationController.getBackButton()
+        
+        if self.revealViewController() != nil {
+            self.revealViewController().rearViewRevealWidth = 300
+            navigationItem.leftBarButtonItem?.target = self.revealViewController()
+            navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "Embedded PageViewController") {
             self.pageViewController = segue.destination as? BusinessPageViewController
         }
+    }
+    
+    func test() -> Void {
+        
     }
 }
 
