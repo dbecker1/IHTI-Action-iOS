@@ -20,6 +20,7 @@ class ReportViewController: UIViewController {
     @IBOutlet weak var public_switch: UISwitch!
     @IBOutlet weak var restroom_switch: UISwitch!
     @IBOutlet weak var notposted_switch: UISwitch!
+    @IBOutlet weak var submit_label: UIButton!
     
     var business : Business? = nil
 
@@ -39,6 +40,11 @@ class ReportViewController: UIViewController {
         restroom_switch.addTarget(self, action: #selector(disableNotPosted), for: UIControlEvents.valueChanged)
         notposted_switch.addTarget(self, action: #selector(disablePublicAndRestroom), for: UIControlEvents.valueChanged)
 
+        submit_label.layer.cornerRadius = 2.0
+        submit_label.layer.shadowColor = UIColor.black.cgColor
+        submit_label.layer.shadowOffset=CGSize(width: 0.5, height: 1)
+        submit_label.layer.shadowRadius = 2.0
+        submit_label.layer.shadowOpacity = 0.375
         // Do any additional setup after loading the view.
     }
 
