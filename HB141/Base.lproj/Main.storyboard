@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="5922" y="-240"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Menu Table View Controller-->
         <scene sceneID="eze-wY-S5s">
             <objects>
-                <tableViewController id="zkc-dx-64h" sceneMemberID="viewController">
+                <tableViewController id="zkc-dx-64h" customClass="MenuTableViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MqM-9R-bbZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="459"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,6 +238,9 @@
                             <outlet property="delegate" destination="zkc-dx-64h" id="4Zg-zq-Qu3"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="settingsIcon" destination="6eY-aS-6kt" id="n7v-Cc-PHC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlb-Tc-nBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

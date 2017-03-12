@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import FontAwesome_swift
+import Toast_Swift
 
 class MapViewController : UIViewController {
     
@@ -55,8 +56,8 @@ class MapViewController : UIViewController {
         }
     }
     
-    func test() -> Void {
-        
+    func showSuccessfulToast() -> Void {
+        self.view.makeToast("Report Successfully Submitted.")
     }
 }
 
