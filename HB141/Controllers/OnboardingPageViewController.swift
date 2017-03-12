@@ -58,7 +58,6 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         dataSource = self;
         
@@ -74,9 +73,6 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         
         self.view.backgroundColor = thisColor
         
-        progressButton.center = CGPoint(x: view.bounds.maxX - 50, y: view.bounds.maxY - 50)
-        progressButton.setTitle("Skip", for: UIControlState.normal);
-        progressButton.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleTopMargin, UIViewAutoresizing.flexibleBottomMargin]
         titleBackground.backgroundColor = UIColor.white
         for view in orderedViewControllers[0].view.subviews as [UIView] {
             if let mainTitle = view as? UILabel {
@@ -93,8 +89,19 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                 //print("Height: \(nextHeight)");
             }
         }
-        self.view.insertSubview(titleBackground, at: 0)
+        progressButton.setTitle("SKIP", for: UIControlState.normal);
+        progressButton.addTarget(self, action: #selector(OnboardingPageViewController.progressButtonClicked(_:)), for: .touchDown)
+        progressButton.translatesAutoresizingMaskIntoConstraints = false
+        progressButton.titleLabel!.font = UIFont(name: "Changa-ExtraLight", size: 20)
         self.view.addSubview(progressButton)
+        
+        let margins = self.view.layoutMarginsGuide
+        progressButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 5).isActive = true
+        progressButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -2).isActive = true
+        progressButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        progressButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        
+        self.view.insertSubview(titleBackground, at: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -137,6 +144,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                             nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
+                    progressButton.setTitle("SKIP", for: UIControlState.normal);
                 case 1:
                     //color
                     prevColor = ColorConstants.onboarding1Color
@@ -160,6 +168,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                             nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
+                    progressButton.setTitle("SKIP", for: UIControlState.normal);
                 case 2:
                     //color
                     prevColor = ColorConstants.onboarding2Color
@@ -183,6 +192,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                             nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
+                    progressButton.setTitle("SKIP", for: UIControlState.normal);
                 case 3:
                     //color
                     prevColor = ColorConstants.onboarding3Color
@@ -206,6 +216,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                             nextHeight = (atitle.frame.maxY - atitle.frame.height)*multiplier + atitle.frame.height + buffer
                         }
                     }
+                    progressButton.setTitle("SKIP", for: UIControlState.normal);
                 case 4:
                     //color
                     prevColor = ColorConstants.onboarding4Color
@@ -226,10 +237,12 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
                         }
                     }
                     //nextHeight = UIScreen.main.bounds.size.height
+                    progressButton.setTitle("JOIN", for: UIControlState.normal);
                 default:
                     prevColor = ColorConstants.onboarding0Color
                     thisColor = ColorConstants.onboarding0Color
                     nextColor = ColorConstants.onboarding0Color
+                    progressButton.setTitle("JOIN", for: UIControlState.normal);
             }
             //print("Index: " + String(currentIndex))
         }
@@ -267,6 +280,10 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
         let calcHeight = from + deltaX
         //print("Calculated Height: \(calcHeight)")
         return calcHeight
+    }
+    
+    func progressButtonClicked(_ button: UIButton) {
+        print("Segue to loginpage");
     }
     
 }
@@ -309,23 +326,16 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex];
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2);
+        appearance.currentPageIndicatorTintColor = UIColor.white
+        appearance.backgroundColor = UIColor.clear
+        self.view.bringSubview(toFront: self.progressButton)
         return orderedViewControllers.count
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return currentIndex
-    }
-}
-
-extension UIView {
-    final func sizeToFitCustom() {
-        var w: CGFloat = 0,
-        h: CGFloat = 0
-        for view in subviews {
-            if view.frame.origin.x + view.frame.width > w { w = view.frame.origin.x + view.frame.width }
-            if view.frame.origin.y + view.frame.height > h { h = view.frame.origin.y + view.frame.height }
-        }
-        frame.size = CGSize(width: w, height: h)
     }
 }
