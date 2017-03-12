@@ -43,3 +43,13 @@ struct ColorConstants {
     //#FFFFFF
     static let onboarding6Color = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 255)
 }
+
+struct GoogleConstants {
+    static let mapsApiKey = "AIzaSyCz6Nc1-rEq4cyKcn2KdYb9Ck1n5_lMoFE"
+    
+    static let placesApiKey = "AIzaSyBs_NYH0F6kDuDHMcIEaqK_uK5Un9U7LfM"
+    
+    static let businessCount = 5
+    
+    static let dateFormat = "M/d/yy h:mm a" 
+}
