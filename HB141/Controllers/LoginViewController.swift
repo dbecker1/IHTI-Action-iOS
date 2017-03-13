@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
+    
 
+    @IBOutlet weak var Username: UITextField!
+    @IBOutlet weak var Password: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +38,14 @@ class LoginViewController: UIViewController {
     }
     */
 
+    @IBAction func login(_ sender: Any) {
+        FIRAuth.auth()?.signIn(withEmail: Username.text!, password: Password.text!) {
+            (user, error) in
+            if error != nil {
+                print("Login Unsuccessful")
+            } else {
+                print("Login Successful!!")
+            }
+        }
+    }
 }

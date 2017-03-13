@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1FB26A976EE59F091E906A79 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */; };
+		C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0256C371E6C9AEC007012EB /* LoginViewController.swift */; };
+		C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0256C391E6CA37A007012EB /* GoogleService-Info.plist */; };
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
 		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
 		FD2928951E51596A0060A544 /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2928941E51596A0060A544 /* GoogleServices.swift */; };
@@ -28,6 +30,8 @@
 		0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
+		C0256C371E6C9AEC007012EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		C0256C391E6CA37A007012EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
 		F6C221931E5559E0004A532C /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessViewController.swift; path = Controllers/BusinessViewController.swift; sourceTree = "<group>"; };
 		FD2928941E51596A0060A544 /* GoogleServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleServices.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		FDABA83C1E47C56600B817DA /* HB141 */ = {
 			isa = PBXGroup;
 			children = (
+				C0256C391E6CA37A007012EB /* GoogleService-Info.plist */,
 				FD2928931E5159580060A544 /* Services */,
 				FDC517371E4D77E200C5D430 /* Models */,
 				FDABA8521E47C6B200B817DA /* Storyboards */,
@@ -123,6 +128,7 @@
 				FDC517321E4D465D00C5D430 /* MapViewController.swift */,
 				F6C221911E55598A004A532C /* BusinessPageViewController.swift */,
 				F6C221931E5559E0004A532C /* BusinessViewController.swift */,
+				C0256C371E6C9AEC007012EB /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
 				FDEA130C1E47FC5100868634 /* Onboarding.storyboard in Resources */,
 				FDEA13101E47FCEF00868634 /* Map.storyboard in Resources */,
+				C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */,
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
 				F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */,
