@@ -239,6 +239,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="informationIcon" destination="p0v-Nk-Da2" id="qDJ-Ft-9lF"/>
+                        <outlet property="locationIcon" destination="y36-SV-6KD" id="2hB-I8-Tdt"/>
+                        <outlet property="previousIcon" destination="7xN-A3-1B4" id="Kfp-Uf-2rV"/>
                         <outlet property="settingsIcon" destination="6eY-aS-6kt" id="n7v-Cc-PHC"/>
                     </connections>
                 </tableViewController>
