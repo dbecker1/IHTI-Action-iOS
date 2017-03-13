@@ -75,7 +75,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="z5j-aE-wgA">
             <objects>
-                <viewController id="9Vu-n6-rxq" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Homepage" id="9Vu-n6-rxq" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a0n-l7-yKp"/>
                         <viewControllerLayoutGuide type="bottom" id="zZ2-CL-vt5"/>
@@ -273,11 +273,22 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnh-vN-LWX">
+                                        <rect key="frame" x="20" y="20" width="60" height="30"/>
+                                        <state key="normal" title="Sign Out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signOut:" destination="tE3-ki-wBf" eventType="touchUpInside" id="FlH-m6-vyH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="2Nb-Nc-zjh" firstAttribute="top" secondItem="lFh-Tn-9gC" secondAttribute="bottom" constant="1" id="5wl-cH-P0e"/>
                                     <constraint firstItem="lFh-Tn-9gC" firstAttribute="leading" secondItem="2Nb-Nc-zjh" secondAttribute="leading" id="7LD-E1-Bj1"/>
+                                    <constraint firstItem="nnh-vN-LWX" firstAttribute="top" secondItem="2lW-B0-ekB" secondAttribute="top" constant="20" id="9f9-OB-QBM"/>
+                                    <constraint firstItem="nnh-vN-LWX" firstAttribute="leading" secondItem="lFh-Tn-9gC" secondAttribute="leading" id="uib-eD-8h4"/>
                                     <constraint firstAttribute="bottom" secondItem="2Nb-Nc-zjh" secondAttribute="bottom" constant="8" id="vOd-WE-DWZ"/>
                                     <constraint firstItem="2Nb-Nc-zjh" firstAttribute="leading" secondItem="2lW-B0-ekB" secondAttribute="leading" constant="20" id="xeQ-LB-ug3"/>
                                 </constraints>
@@ -331,6 +342,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YHy-3r-Hwd"/>
+        <segue reference="tiE-rH-c5e"/>
     </inferredMetricsTieBreakers>
 </document>

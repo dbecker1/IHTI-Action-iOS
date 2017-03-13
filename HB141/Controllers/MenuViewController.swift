@@ -41,5 +41,18 @@ class MenuViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func signOut(_ sender: Any) {
+        do{
+            try FIRAuth.auth()?.signOut()
+        } catch {
+            print(error)
+        }
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginController = storyboard.instantiateInitialViewController()
+        
+        self.present(loginController!, animated: false, completion: nil)
+        
+    }
 
 }

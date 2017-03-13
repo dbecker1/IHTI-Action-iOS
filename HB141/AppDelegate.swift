@@ -25,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSPlacesClient.provideAPIKey(GoogleConstants.placesApiKey)
         
+        var initialViewController : UIViewController?
+        let user = FIRAuth.auth()?.currentUser
+        if user == nil {
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            initialViewController = storyboard.instantiateInitialViewController()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "Homepage")
+        }
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

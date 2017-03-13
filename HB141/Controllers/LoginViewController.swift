@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var Username: UITextField!
     @IBOutlet weak var Password: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -42,9 +43,9 @@ class LoginViewController: UIViewController {
         FIRAuth.auth()?.signIn(withEmail: Username.text!, password: Password.text!) {
             (user, error) in
             if error != nil {
-                print("Login Unsuccessful")
+                self.errorLabel.isHidden = false
             } else {
-                print("Login Successful!!")
+                self.performSegue(withIdentifier: "toHomepage", sender: nil)
             }
         }
     }
