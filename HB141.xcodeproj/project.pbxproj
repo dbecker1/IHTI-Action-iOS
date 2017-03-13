@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02AAEF075698B257B2C3333A /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E250564376348598EB99FD0 /* Pods_HB141.framework */; };
+		9F1A600605642D5A5B31DA12 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E250564376348598EB99FD0 /* Pods_HB141.framework */; };
+		C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0256C371E6C9AEC007012EB /* LoginViewController.swift */; };
+		C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0256C391E6CA37A007012EB /* GoogleService-Info.plist */; };
 		E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */; };
 		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
 		E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */; };
@@ -40,6 +42,8 @@
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		6E250564376348598EB99FD0 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
+		C0256C371E6C9AEC007012EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		C0256C391E6CA37A007012EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = Controllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
 		E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 800.ttf"; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02AAEF075698B257B2C3333A /* Pods_HB141.framework in Frameworks */,
+				9F1A600605642D5A5B31DA12 /* Pods_HB141.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				FDF59CBE1E74AE2400352DC4 /* Resources */,
-				FD4E7AF61E6B6798007EEC0C /* GoogleService-Info.plist */,
+				C0256C391E6CA37A007012EB /* GoogleService-Info.plist */,
 				FD2928931E5159580060A544 /* Services */,
 				FDC517371E4D77E200C5D430 /* Models */,
 				FDABA8521E47C6B200B817DA /* Storyboards */,
@@ -160,6 +164,7 @@
 				FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */,
 				FDF59CBC1E74A38600352DC4 /* MenuViewController.swift */,
 				FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */,
+				C0256C371E6C9AEC007012EB /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
 				FDF59CBB1E749CE800352DC4 /* FontAwesome.otf in Resources */,
 				FD4E7AF71E6B6798007EEC0C /* GoogleService-Info.plist in Resources */,
+				C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */,
+				C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */,
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
 				FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */,

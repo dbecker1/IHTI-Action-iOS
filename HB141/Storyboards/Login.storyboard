@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Or-qS-IrR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Or-qS-IrR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="MBx-O5-40F">
             <objects>
-                <viewController id="2Or-qS-IrR" sceneMemberID="viewController">
+                <viewController id="2Or-qS-IrR" customClass="LoginViewController" customModule="HB141" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tW1-gg-ozX"/>
                         <viewControllerLayoutGuide type="bottom" id="Sdw-1V-fxj"/>
@@ -28,23 +28,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p1i-qZ-Z4c">
-                                <rect key="frame" x="27" y="132" width="320" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hXU-dj-30X">
+                                <rect key="frame" x="146.5" y="185" width="83.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hXU-dj-30X">
-                                <rect key="frame" x="27" y="192" width="320" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4S-2h-jbs">
                                 <rect key="frame" x="168" y="258" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="2Or-qS-IrR" eventType="touchUpInside" id="m32-2m-C3d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwC-r4-Dgr">
                                 <rect key="frame" x="27" y="304" width="115" height="30"/>
@@ -70,14 +67,28 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="SIGN IN WITH FACEBOOK"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p1i-qZ-Z4c">
+                                <rect key="frame" x="146.5" y="125" width="83.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hXU-dj-30X" firstAttribute="top" secondItem="p1i-qZ-Z4c" secondAttribute="bottom" constant="30" id="Agu-9U-gAm"/>
                             <constraint firstItem="hXU-dj-30X" firstAttribute="height" secondItem="p1i-qZ-Z4c" secondAttribute="height" id="BK6-7b-OiJ"/>
                             <constraint firstItem="hXU-dj-30X" firstAttribute="width" secondItem="p1i-qZ-Z4c" secondAttribute="width" id="D2d-aP-iq0"/>
+                            <constraint firstItem="hXU-dj-30X" firstAttribute="top" secondItem="p1i-qZ-Z4c" secondAttribute="bottom" constant="30" id="Dy9-lA-vlR"/>
+                            <constraint firstItem="p1i-qZ-Z4c" firstAttribute="top" secondItem="tW1-gg-ozX" secondAttribute="bottom" constant="105" id="Gto-7O-ez8"/>
+                            <constraint firstItem="p1i-qZ-Z4c" firstAttribute="centerX" secondItem="FWD-Ox-t9h" secondAttribute="centerX" id="Tu8-aN-z2N"/>
+                            <constraint firstItem="p1i-qZ-Z4c" firstAttribute="centerX" secondItem="hXU-dj-30X" secondAttribute="centerX" id="zfb-00-Zur"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Password" destination="hXU-dj-30X" id="IiX-oo-ARM"/>
+                        <outlet property="Username" destination="p1i-qZ-Z4c" id="gXw-5i-Pg4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fa3-nQ-QeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Authentication successful!")
         })
         ref = FIRDatabase.database().reference()
+        
+        FIRApp.configure()
+        
         
         GMSServices.provideAPIKey(GoogleConstants.mapsApiKey)
         
