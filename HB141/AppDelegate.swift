@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController : UIViewController?
         let user = FIRAuth.auth()?.currentUser
         if user == nil {
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
             initialViewController = storyboard.instantiateInitialViewController()
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
