@@ -13,4 +13,5 @@ target 'HB141' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Toast-Swift', '~> 2.0.0'
+  pod 'FontAwesome.swift'
 end

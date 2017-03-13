@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import Toast_Swift
 
 class ReportViewController: UIViewController {
 
@@ -39,6 +38,8 @@ class ReportViewController: UIViewController {
         public_switch.addTarget(self, action: #selector(disableNotPosted), for: UIControlEvents.valueChanged)
         restroom_switch.addTarget(self, action: #selector(disableNotPosted), for: UIControlEvents.valueChanged)
         notposted_switch.addTarget(self, action: #selector(disablePublicAndRestroom), for: UIControlEvents.valueChanged)
+        
+        self.title = "New Report"
 
         submit_label.layer.cornerRadius = 2.0
         submit_label.layer.shadowColor = UIColor.black.cgColor
@@ -64,8 +65,6 @@ class ReportViewController: UIViewController {
     }
     
     func sendReport() {
-        print("REPORT SENT")
-        
         //Formatting logic is kept at controller level as everything in the model object will be serialized
         
         let dateFormatter = DateFormatter()
@@ -88,9 +87,35 @@ class ReportViewController: UIViewController {
         }
         
         let service = FirebaseService(table: .report)
-        service.enterData(forIdentifier: "TESTREPORT", data: newReport)
+        let identifier = service.getKey()
+        service.enterData(forIdentifier: identifier, data: newReport)
         
-        self.view.makeToast("Report Successfully Submitted.")
+        service.table = .establishment
+        if let id = business?.placeID {
+            service.retrieveData(forIdentifier: id) { (object) in
+                if let establishment = object as? Establishment {
+                    if establishment.Name == "" {
+                        let newEstablishment = Establishment()
+                        newEstablishment.Name = (self.business?.businessName)!
+                        newEstablishment.Address = (self.business?.businessAddress)!
+                        newEstablishment.PhoneNumber = (self.business?.businessPhone)!
+                        newEstablishment.Website = (self.business?.businessWebsite)!
+                        service.enterData(forIdentifier: id, data: newEstablishment)
+                    }
+                }
+            }
+        }
+        
+        
+        _ = navigationController?.popViewController(animated: true)
+        
+        
+        let prev = navigationController?.viewControllers.last
+
+        if let mapController = prev as? MapViewController {
+            mapController.showSuccessfulToast()
+        }
+        
     }
     
     func validateForm() -> Bool {

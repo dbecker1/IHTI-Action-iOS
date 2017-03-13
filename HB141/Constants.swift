@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 
 struct ColorConstants {
+    
+    static let titleBarColor = UIColor(red: 115/255, green: 36/255, blue: 156/255, alpha: 1.0)
     //#9b59b6
     static let primaryColor = UIColor(red: 155/255, green: 89/255, blue: 182/255, alpha: 1.0)
     
     //#8e44ad
     static let secondaryColor = UIColor(red: 142/255, green: 68/255, blue: 173/255, alpha: 1.0)
-    
+
     //#FF8A65
     static let highlightColor = UIColor(red: 255/255, green: 138/255, blue: 101/255, alpha: 1.0)
     
@@ -42,6 +44,7 @@ struct ColorConstants {
     
     //#FFFFFF
     static let onboarding6Color = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 255)
+
 }
 
 struct GoogleConstants {

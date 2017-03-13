@@ -31,9 +31,11 @@ class GooglePlacesService : NSObject {
                     let place = placeList.likelihoods.remove(at: i)
                     let business = Business()
                     business.businessName = place.place.name.capitalized
-                    business.businessType = place.place.types.first?.capitalized
+                    business.businessType = place.place.types.joined(separator: " | ").capitalized.replacingOccurrences(of: "_", with: " ")
                     business.placeID = place.place.placeID
                     business.businessAddress = place.place.formattedAddress
+                    business.businessPhone = place.place.phoneNumber
+                    business.businessWebsite = place.place.website?.absoluteString
                     self.businesses.append(business)
                     print("\(business.businessName!)")
                 }
