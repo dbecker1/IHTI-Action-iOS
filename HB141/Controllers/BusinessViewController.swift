@@ -27,7 +27,7 @@ class BusinessViewController: UIViewController {
 
         imageView.isUserInteractionEnabled = true
         let singletap = UITapGestureRecognizer(target: self, action: #selector(showReport))
-        imageView.addGestureRecognizer(singletap)
+        self.view.addGestureRecognizer(singletap)
         
         let toView : UIView?
         if (nameLabel.intrinsicContentSize.width > typeLabel.intrinsicContentSize.width) {

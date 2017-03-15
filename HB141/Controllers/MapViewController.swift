@@ -14,6 +14,7 @@ class MapViewController : UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var pageViewContainer: UIView!
+    @IBOutlet weak var overlayView: UIView!
     
     var pageViewController : BusinessPageViewController?
     
@@ -70,6 +71,8 @@ extension MapViewController : GooglePlacesDelegate {
         
         if let pageController = pageViewController {
             pageController.setBusinesses(newBusinesses: businesses)
+            overlayView.removeFromSuperview()
+            pageViewContainer.isHidden = false
         }
     }
 }
