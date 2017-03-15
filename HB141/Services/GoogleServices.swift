@@ -26,9 +26,12 @@ class GooglePlacesService : NSObject {
                 print("Pick Place error: \(error.localizedDescription)")
                 return
             }
+            let x = GoogleConstants.businessCount
+            let y = (placeList?.likelihoods.count)!
+            let maxIndex = min(x, y) - 1
             if let placeList = placeList {
-                for i in 0...(GoogleConstants.businessCount - 1) {
-                    let place = placeList.likelihoods.remove(at: i)
+                for i in 0...maxIndex {
+                    let place = placeList.likelihoods[i]
                     let business = Business()
                     business.businessName = place.place.name.capitalized
                     business.businessType = place.place.types.first?.capitalized
@@ -39,12 +42,12 @@ class GooglePlacesService : NSObject {
                 }
             }
             
-            self.loadImages(index: 0)
+            self.loadImages(index: 0, maxIndex: maxIndex)
         }
 
     }
     
-    func loadImages(index : Int) {
+    func loadImages(index : Int, maxIndex: Int) {
         let business = businesses[index]
         placesClient.lookUpPhotos(forPlaceID: business.placeID!) { (photos, error) -> Void in
             if let error = error {
@@ -58,11 +61,11 @@ class GooglePlacesService : NSObject {
                         } else {
                             business.image = image;
                         }
-                        if(index == GoogleConstants.businessCount - 1) {
+                        if(index == maxIndex) {
                             self.delegate.foundBusinesses(businesses: self.businesses)
                         } else {
                             let newIndex = index + 1
-                            self.loadImages(index: newIndex)
+                            self.loadImages(index: newIndex, maxIndex: maxIndex)
                         }
                     })
                 } else {
@@ -70,7 +73,7 @@ class GooglePlacesService : NSObject {
                         self.delegate.foundBusinesses(businesses: self.businesses)
                     } else {
                         let newIndex = index + 1
-                        self.loadImages(index: newIndex)
+                        self.loadImages(index: newIndex, maxIndex: maxIndex)
                     }
                 }
             }

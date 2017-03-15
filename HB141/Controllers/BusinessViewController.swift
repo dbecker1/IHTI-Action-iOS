@@ -13,6 +13,7 @@ class BusinessViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
 
     var index: Int = 0
     
@@ -28,7 +29,15 @@ class BusinessViewController: UIViewController {
         let singletap = UITapGestureRecognizer(target: self, action: #selector(showReport))
         imageView.addGestureRecognizer(singletap)
         
-        // Do any additional setup after loading the view.
+        let toView : UIView?
+        if (nameLabel.intrinsicContentSize.width > typeLabel.intrinsicContentSize.width) {
+            toView = nameLabel
+        } else {
+            toView = typeLabel
+        }
+        let constraint = NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: toView, attribute: .trailing, multiplier: 1, constant: 10)
+        
+        view.addConstraint(constraint)
     }
     
     func showReport() {

@@ -8,20 +8,36 @@
 
 import UIKit
 
-class BusinessPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class BusinessPageViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    var pageController : UIPageViewController!
     
     var businesses : [Business] = []
+    
+    var currentIndex : Int?
+    var pendingIndex : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource = self
+        pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        pageController.dataSource = self
+        pageController.delegate = self
+        
+        view.addSubview(pageController.view)
+        
+        view.bringSubview(toFront: pageControl)
     }
     
     func setBusinesses(newBusinesses : [Business]) {
         self.businesses = newBusinesses
         
-        self.setViewControllers([getViewController(atIndex: 0)], direction: .forward, animated: true, completion: nil)
+        pageController.setViewControllers([getViewController(atIndex: 0)], direction: .forward, animated: true, completion: nil)
+        
+        pageControl.numberOfPages = businesses.count
+        pageControl.currentPage = 0
     }
     
     func getViewController(atIndex index: Int) -> BusinessViewController {
@@ -65,7 +81,19 @@ class BusinessPageViewController: UIPageViewController, UIPageViewControllerData
         return getViewController(atIndex: index)
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        let controller = pendingViewControllers.first as! BusinessViewController
+        pendingIndex = businesses.index(of: controller.business!)
+    }
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            currentIndex = pendingIndex
+            if let index = currentIndex {
+                pageControl.currentPage = index
+            }
+        }
+    }
     
     
     
