@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
 
     @IBOutlet weak var Username: UITextField!
@@ -18,6 +19,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -26,7 +29,6 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -45,6 +47,17 @@ class LoginViewController: UIViewController {
                 print("Login Unsuccessful")
             } else {
                 print("Login Successful!!")
+            }
+        }
+    }
+    
+    func loginExternal(credential: FIRAuthCredential) {
+        FIRAuth.auth()?.signIn(with: credential) {
+            (user, error) in
+            if error != nil {
+                print("Login Unsuccessful")
+            } else {
+                print("Login Successful")
             }
         }
     }
