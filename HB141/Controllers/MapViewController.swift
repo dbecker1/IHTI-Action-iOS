@@ -16,6 +16,8 @@ class MapViewController : UIViewController {
     @IBOutlet weak var pageViewContainer: UIView!
     @IBOutlet weak var overlayView: UIView!
     
+    var businessesLoaded : Bool = false
+    
     var pageViewController : BusinessPageViewController?
     
     var locationManager : CLLocationManager!
@@ -30,9 +32,6 @@ class MapViewController : UIViewController {
         
         self.view.addSubview(pageViewContainer)
         self.view.bringSubview(toFront: pageViewContainer)
-        
-        let services = GooglePlacesService(delegate: self)
-        services.loadBusinesses()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,6 +60,11 @@ extension MapViewController: CLLocationManagerDelegate {
             
             locationManager.stopUpdatingLocation()
             
+            if !businessesLoaded {
+                businessesLoaded = true
+                let services = GooglePlacesService(delegate: self)
+                services.loadBusinesses()
+            }
         }
     }
 }
@@ -71,7 +75,9 @@ extension MapViewController : GooglePlacesDelegate {
         
         if let pageController = pageViewController {
             pageController.setBusinesses(newBusinesses: businesses)
-            overlayView.removeFromSuperview()
+            if(view.subviews.contains(overlayView)) {
+                overlayView.removeFromSuperview()
+            }
             pageViewContainer.isHidden = false
         }
     }
