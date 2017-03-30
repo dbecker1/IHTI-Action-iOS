@@ -12,4 +12,5 @@ target 'HB141' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'FacebookLogin'
 end
