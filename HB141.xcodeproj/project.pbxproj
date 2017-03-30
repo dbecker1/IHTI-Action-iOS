@@ -11,6 +11,8 @@
 		E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */; };
 		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
 		E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */; };
+		F6AE210E1E8D632300A77FF0 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AE210D1E8D632300A77FF0 /* Settings.storyboard */; };
+		F6AE21101E8D63AC00A77FF0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE210F1E8D63AC00A77FF0 /* SettingsViewController.swift */; };
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
 		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
 		FD4E7AF21E6B634D007EEC0C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */; };
@@ -38,6 +40,8 @@
 		E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = Controllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
 		E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 800.ttf"; sourceTree = "<group>"; };
+		F6AE210D1E8D632300A77FF0 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Storyboards/Settings.storyboard; sourceTree = "<group>"; };
+		F6AE210F1E8D63AC00A77FF0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
 		F6C221931E5559E0004A532C /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessViewController.swift; path = Controllers/BusinessViewController.swift; sourceTree = "<group>"; };
 		FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Services/FirebaseService.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		FDABA84F1E47C64100B817DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6AE210F1E8D63AC00A77FF0 /* SettingsViewController.swift */,
 				E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */,
 				FDABA8501E47C67400B817DA /* ViewController.swift */,
 				FDC517321E4D465D00C5D430 /* MapViewController.swift */,
@@ -155,6 +160,7 @@
 				FDABA8411E47C56600B817DA /* Main.storyboard */,
 				FDEA130B1E47FC5100868634 /* Onboarding.storyboard */,
 				FDEA130D1E47FCC400868634 /* Login.storyboard */,
+				F6AE210D1E8D632300A77FF0 /* Settings.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				FDEA130C1E47FC5100868634 /* Onboarding.storyboard in Resources */,
 				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
 				FD4E7AF71E6B6798007EEC0C /* GoogleService-Info.plist in Resources */,
+				F6AE210E1E8D632300A77FF0 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +315,7 @@
 				F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */,
 				FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */,
 				FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */,
+				F6AE21101E8D63AC00A77FF0 /* SettingsViewController.swift in Sources */,
 				FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */,
 				FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */,
 			);
