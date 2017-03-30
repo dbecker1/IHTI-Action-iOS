@@ -410,9 +410,10 @@
 			baseConfigurationReference = 580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.HB141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -423,9 +424,10 @@
 			baseConfigurationReference = 733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.HB141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
