@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1FB26A976EE59F091E906A79 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */; };
+		949017461E8F3B530066D3AC /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949017451E8F3B530066D3AC /* Registration.storyboard */; };
+		949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949017471E8F3C0E0066D3AC /* RegistrationController.swift */; };
 		C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0256C371E6C9AEC007012EB /* LoginViewController.swift */; };
 		C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0256C391E6CA37A007012EB /* GoogleService-Info.plist */; };
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
@@ -30,6 +32,8 @@
 		0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
+		949017451E8F3B530066D3AC /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Registration.storyboard; path = Storyboards/Registration.storyboard; sourceTree = "<group>"; };
+		949017471E8F3C0E0066D3AC /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationController.swift; path = Controllers/RegistrationController.swift; sourceTree = "<group>"; };
 		C0256C371E6C9AEC007012EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		C0256C391E6CA37A007012EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				F6C221911E55598A004A532C /* BusinessPageViewController.swift */,
 				F6C221931E5559E0004A532C /* BusinessViewController.swift */,
 				C0256C371E6C9AEC007012EB /* LoginViewController.swift */,
+				949017471E8F3C0E0066D3AC /* RegistrationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				FDEA130B1E47FC5100868634 /* Onboarding.storyboard */,
 				FDEA130D1E47FCC400868634 /* Login.storyboard */,
 				FDEA130F1E47FCEF00868634 /* Map.storyboard */,
+				949017451E8F3B530066D3AC /* Registration.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */,
+				949017461E8F3B530066D3AC /* Registration.storyboard in Resources */,
 				FDABA8451E47C56600B817DA /* Assets.xcassets in Resources */,
 				FDABA8431E47C56600B817DA /* Main.storyboard in Resources */,
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
@@ -288,6 +295,7 @@
 				F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */,
 				FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */,
 				FD2928951E51596A0060A544 /* GoogleServices.swift in Sources */,
+				949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */,
 				FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
