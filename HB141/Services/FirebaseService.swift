@@ -46,6 +46,12 @@ class FirebaseService : NSObject {
         
     }
     
+    func getKey() -> String {
+        let key = ref.child((table?.rawValue)!).childByAutoId().key
+        
+        return key
+    }
+    
     private func convertSnapshot(snapshot: FIRDataSnapshot) -> FIRDataObject {
         switch table! {
         case FirebaseTable.users :

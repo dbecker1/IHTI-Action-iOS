@@ -41,6 +41,8 @@ class GooglePlacesService : NSObject {
                     business.businessType = types.joined(separator: " | ").capitalized.replacingOccurrences(of: "_", with: " ")
                     business.placeID = place.place.placeID
                     business.businessAddress = place.place.formattedAddress
+                    business.businessPhone = place.place.phoneNumber
+                    business.businessWebsite = place.place.website?.absoluteString
                     self.businesses.append(business)
                     print("\(business.businessName!)")
                 }

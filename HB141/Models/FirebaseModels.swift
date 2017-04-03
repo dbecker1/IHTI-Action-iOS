@@ -29,9 +29,14 @@ class Report : FIRDataObject {
 }
 
 class Establishment : FIRDataObject {
-    public var Address : String?
-    public var Name : String?
-    public var PhoneNumber : String?
+    public var Address : String = ""
+    public var Name : String = ""
+    public var PhoneNumber : String = ""
+    public var Website : String = ""
+    
+    override func toDictionary() -> Dictionary<String, Any> {
+        return self.dictionaryWithValues(forKeys: ["Address", "Name", "PhoneNumber", "Website"])
+    }
 }
 
 

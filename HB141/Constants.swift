@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 struct ColorConstants {
+    
+    static let titleBarColor = UIColor(red: 115/255, green: 36/255, blue: 156/255, alpha: 1.0)
     //#9b59b6
     static let primaryColor = UIColor(red: 155/255, green: 89/255, blue: 182/255, alpha: 1.0)
     
