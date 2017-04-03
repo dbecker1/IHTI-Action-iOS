@@ -16,6 +16,9 @@ class MapViewController : UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var pageViewContainer: UIView!
+    @IBOutlet weak var overlayView: UIView!
+    
+    var businessesLoaded : Bool = false
     
     var pageViewController : BusinessPageViewController?
     
@@ -80,6 +83,11 @@ extension MapViewController: CLLocationManagerDelegate {
             
             locationManager.stopUpdatingLocation()
             
+            if !businessesLoaded {
+                businessesLoaded = true
+                let services = GooglePlacesService(delegate: self)
+                services.loadBusinesses()
+            }
         }
     }
 }
@@ -90,6 +98,10 @@ extension MapViewController : GooglePlacesDelegate {
         
         if let pageController = pageViewController {
             pageController.setBusinesses(newBusinesses: businesses)
+            if(view.subviews.contains(overlayView)) {
+                overlayView.removeFromSuperview()
+            }
+            pageViewContainer.isHidden = false
         }
     }
 }

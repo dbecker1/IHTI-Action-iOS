@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		990CC00C3BCFA9696F568512 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DCB0A7B19B015E8F2DBD94 /* Pods_HB141.framework */; };
+		8AEF74E0606EEC08279F2653 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96373585F14E25BCD62A8BD9 /* Pods_HB141.framework */; };
+		949017461E8F3B530066D3AC /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949017451E8F3B530066D3AC /* Registration.storyboard */; };
+		949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949017471E8F3C0E0066D3AC /* RegistrationController.swift */; };
+		C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0256C371E6C9AEC007012EB /* LoginViewController.swift */; };
+		C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0256C391E6CA37A007012EB /* GoogleService-Info.plist */; };
+		E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */; };
+		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
+		E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */; };
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
 		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
 		FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */; };
 		FD4E7AF21E6B634D007EEC0C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */; };
 		FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF11E6B634D007EEC0C /* GoogleServices.swift */; };
 		FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF41E6B6355007EEC0C /* FirebaseModels.swift */; };
-		FD4E7AF71E6B6798007EEC0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4E7AF61E6B6798007EEC0C /* GoogleService-Info.plist */; };
 		FD4E7AF91E6B99C0007EEC0C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4E7AF81E6B99C0007EEC0C /* Map.storyboard */; };
 		FD4E7AFB1E6B99CD007EEC0C /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */; };
 		FD570E0B1E49289E00D8904C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD570E0A1E49289E00D8904C /* Constants.swift */; };
@@ -36,14 +42,20 @@
 /* Begin PBXFileReference section */
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
-		F1DCB0A7B19B015E8F2DBD94 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		949017451E8F3B530066D3AC /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Registration.storyboard; path = Storyboards/Registration.storyboard; sourceTree = "<group>"; };
+		949017471E8F3C0E0066D3AC /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationController.swift; path = Controllers/RegistrationController.swift; sourceTree = "<group>"; };
+		96373585F14E25BCD62A8BD9 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0256C371E6C9AEC007012EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		C0256C391E6CA37A007012EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = Controllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
+		E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 800.ttf"; sourceTree = "<group>"; };
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
 		F6C221931E5559E0004A532C /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessViewController.swift; path = Controllers/BusinessViewController.swift; sourceTree = "<group>"; };
 		FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = Controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
 		FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Services/FirebaseService.swift; sourceTree = "<group>"; };
 		FD4E7AF11E6B634D007EEC0C /* GoogleServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleServices.swift; path = Services/GoogleServices.swift; sourceTree = "<group>"; };
 		FD4E7AF41E6B6355007EEC0C /* FirebaseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseModels.swift; path = Models/FirebaseModels.swift; sourceTree = "<group>"; };
-		FD4E7AF61E6B6798007EEC0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD4E7AF81E6B99C0007EEC0C /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = Storyboards/Map.storyboard; sourceTree = "<group>"; };
 		FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportViewController.swift; path = Controllers/ReportViewController.swift; sourceTree = "<group>"; };
 		FD570E0A1E49289E00D8904C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -71,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				990CC00C3BCFA9696F568512 /* Pods_HB141.framework in Frameworks */,
+				8AEF74E0606EEC08279F2653 /* Pods_HB141.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +93,7 @@
 		4CC7D16B68C57684DB2ED8CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F1DCB0A7B19B015E8F2DBD94 /* Pods_HB141.framework */,
+				96373585F14E25BCD62A8BD9 /* Pods_HB141.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +148,8 @@
 				FDABA8491E47C56600B817DA /* Info.plist */,
 				FDF59CBA1E749CE800352DC4 /* FontAwesome.otf */,
 				FD570E0A1E49289E00D8904C /* Constants.swift */,
+				E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */,
+				E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */,
 			);
 			path = HB141;
 			sourceTree = "<group>";
@@ -144,10 +158,13 @@
 			isa = PBXGroup;
 			children = (
 				FDB2E0201E70C10F00A73091 /* BaseNavigationController.swift */,
+				E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */,
 				FDABA8501E47C67400B817DA /* ViewController.swift */,
 				FDC517321E4D465D00C5D430 /* MapViewController.swift */,
 				F6C221911E55598A004A532C /* BusinessPageViewController.swift */,
 				F6C221931E5559E0004A532C /* BusinessViewController.swift */,
+				C0256C371E6C9AEC007012EB /* LoginViewController.swift */,
+				949017471E8F3C0E0066D3AC /* RegistrationController.swift */,
 				FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */,
 				FDF59CBC1E74A38600352DC4 /* MenuViewController.swift */,
 				FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */,
@@ -163,6 +180,7 @@
 				FDABA8411E47C56600B817DA /* Main.storyboard */,
 				FDEA130B1E47FC5100868634 /* Onboarding.storyboard */,
 				FDEA130D1E47FCC400868634 /* Login.storyboard */,
+				949017451E8F3B530066D3AC /* Registration.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -217,7 +235,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "International Human Trafficking Institute";
 				TargetAttributes = {
 					FDABA8391E47C56600B817DA = {
@@ -251,13 +269,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */,
+				949017461E8F3B530066D3AC /* Registration.storyboard in Resources */,
 				FD4E7AF91E6B99C0007EEC0C /* Map.storyboard in Resources */,
 				FDABA8451E47C56600B817DA /* Assets.xcassets in Resources */,
 				FDABA8431E47C56600B817DA /* Main.storyboard in Resources */,
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
+				E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */,
 				FDEA130C1E47FC5100868634 /* Onboarding.storyboard in Resources */,
 				FDF59CBB1E749CE800352DC4 /* FontAwesome.otf in Resources */,
-				FD4E7AF71E6B6798007EEC0C /* GoogleService-Info.plist in Resources */,
+				C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */,
+				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +337,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */,
+				E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */,
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
 				FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */,
@@ -328,6 +351,7 @@
 				FDF59CBD1E74A38600352DC4 /* MenuViewController.swift in Sources */,
 				FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */,
 				FDB2E0211E70C10F00A73091 /* BaseNavigationController.swift in Sources */,
+				949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */,
 				FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */,
 				FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */,
 				FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */,
@@ -374,6 +398,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -423,6 +448,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -452,10 +478,14 @@
 			baseConfigurationReference = 580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< menu
 				CLANG_ENABLE_MODULES = YES;
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> master
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.HB141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HB141-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -469,9 +499,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.HB141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HB141-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

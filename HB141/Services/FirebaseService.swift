@@ -6,6 +6,7 @@
 //  Copyright © 2017 International Human Trafficking Institute. All rights reserved.
 //
 import Firebase
+import FirebaseDatabase
 
 class FirebaseService : NSObject {
     var ref: FIRDatabaseReference!

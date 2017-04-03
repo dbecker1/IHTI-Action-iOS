@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseDatabase
 
 class User : FIRDataObject {
     var reputation : Int?
