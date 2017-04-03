@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FB26A976EE59F091E906A79 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFDF46628FDC098147D62E9 /* Pods_HB141.framework */; };
+		949017461E8F3B530066D3AC /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949017451E8F3B530066D3AC /* Registration.storyboard */; };
+		949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949017471E8F3C0E0066D3AC /* RegistrationController.swift */; };
+		C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0256C371E6C9AEC007012EB /* LoginViewController.swift */; };
+		C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0256C391E6CA37A007012EB /* GoogleService-Info.plist */; };
 		A7AB74E3659F8E7F79B43BF2 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B387A0215CD7FEA7D3597532 /* Pods_HB141.framework */; };
 		E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */; };
 		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
@@ -34,6 +39,10 @@
 /* Begin PBXFileReference section */
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
+		949017451E8F3B530066D3AC /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Registration.storyboard; path = Storyboards/Registration.storyboard; sourceTree = "<group>"; };
+		949017471E8F3C0E0066D3AC /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationController.swift; path = Controllers/RegistrationController.swift; sourceTree = "<group>"; };
+		C0256C371E6C9AEC007012EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		C0256C391E6CA37A007012EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B387A0215CD7FEA7D3597532 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = Controllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
@@ -119,7 +128,7 @@
 		FDABA83C1E47C56600B817DA /* HB141 */ = {
 			isa = PBXGroup;
 			children = (
-				FD4E7AF61E6B6798007EEC0C /* GoogleService-Info.plist */,
+				C0256C391E6CA37A007012EB /* GoogleService-Info.plist */,
 				FD2928931E5159580060A544 /* Services */,
 				FDC517371E4D77E200C5D430 /* Models */,
 				FDABA8521E47C6B200B817DA /* Storyboards */,
@@ -142,6 +151,8 @@
 				FDC517321E4D465D00C5D430 /* MapViewController.swift */,
 				F6C221911E55598A004A532C /* BusinessPageViewController.swift */,
 				F6C221931E5559E0004A532C /* BusinessViewController.swift */,
+				C0256C371E6C9AEC007012EB /* LoginViewController.swift */,
+				949017471E8F3C0E0066D3AC /* RegistrationController.swift */,
 				FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */,
 			);
 			name = Controllers;
@@ -155,6 +166,7 @@
 				FDABA8411E47C56600B817DA /* Main.storyboard */,
 				FDEA130B1E47FC5100868634 /* Onboarding.storyboard */,
 				FDEA130D1E47FCC400868634 /* Login.storyboard */,
+				949017451E8F3B530066D3AC /* Registration.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -232,14 +244,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */,
+				949017461E8F3B530066D3AC /* Registration.storyboard in Resources */,
 				FD4E7AF91E6B99C0007EEC0C /* Map.storyboard in Resources */,
 				FDABA8451E47C56600B817DA /* Assets.xcassets in Resources */,
 				FDABA8431E47C56600B817DA /* Main.storyboard in Resources */,
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
 				E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */,
 				FDEA130C1E47FC5100868634 /* Onboarding.storyboard in Resources */,
+				FDEA13101E47FCEF00868634 /* Map.storyboard in Resources */,
+				C0256C3A1E6CA37A007012EB /* GoogleService-Info.plist in Resources */,
 				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
-				FD4E7AF71E6B6798007EEC0C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */,
 				E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */,
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
@@ -307,6 +322,8 @@
 				FD4E7AF21E6B634D007EEC0C /* FirebaseService.swift in Sources */,
 				F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */,
 				FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */,
+				FD2928951E51596A0060A544 /* GoogleServices.swift in Sources */,
+				949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */,
 				FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */,
 				FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */,
 				FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */,
@@ -433,11 +450,10 @@
 			baseConfigurationReference = 580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = K4V8649U3S;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.HB141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -448,11 +464,10 @@
 			baseConfigurationReference = 733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = K4V8649U3S;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.HB141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
