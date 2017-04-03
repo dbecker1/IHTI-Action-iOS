@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         
         if let loginController = GIDSignIn.sharedInstance().uiDelegate as? LoginViewController {
-            loginController.loginExternal(credential: credential)
+            loginController.loginExternal(credential: credential, callback: nil)
         }
     }
     
