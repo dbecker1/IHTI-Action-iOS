@@ -98,7 +98,7 @@ extension MapViewController : GooglePlacesDelegate {
         
         if let pageController = pageViewController {
             pageController.setBusinesses(newBusinesses: businesses)
-            if(view.subviews.contains(overlayView)) {
+            if(overlayView != nil && view.subviews.contains(overlayView)) {
                 overlayView.removeFromSuperview()
             }
             pageViewContainer.isHidden = false
