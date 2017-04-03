@@ -13,7 +13,7 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 import FBSDKCoreKit
-
+import FirebaseDatabase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
@@ -21,9 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         FIRApp.configure()
-        
         
         GMSServices.provideAPIKey(GoogleConstants.mapsApiKey)
         

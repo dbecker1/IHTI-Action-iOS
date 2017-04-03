@@ -13,19 +13,43 @@ class BusinessViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
-    var name : String = ""
-    var type: String = ""
-    var image: UIImage!
+    @IBOutlet weak var backgroundView: UIView!
+
     var index: Int = 0
+    
+    var business : Business?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = name
-        typeLabel.text = type
-        imageView.image = image
+        nameLabel.text = business?.businessName
+        typeLabel.text = business?.businessType
+        imageView.image = business?.image
+
+        imageView.isUserInteractionEnabled = true
+        let singletap = UITapGestureRecognizer(target: self, action: #selector(showReport))
+        self.view.addGestureRecognizer(singletap)
         
-        // Do any additional setup after loading the view.
+        let toView : UIView?
+        if (nameLabel.intrinsicContentSize.width > typeLabel.intrinsicContentSize.width) {
+            toView = nameLabel
+        } else {
+            toView = typeLabel
+        }
+        let constraint = NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: toView, attribute: .trailing, multiplier: 1, constant: 10)
+        
+        view.addConstraint(constraint)
+    }
+    
+    func showReport() {
+        performSegue(withIdentifier: "enterReport", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "enterReport" {
+            let reportController = segue.destination as! ReportViewController
+            reportController.business = business
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,14 +58,5 @@ class BusinessViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
