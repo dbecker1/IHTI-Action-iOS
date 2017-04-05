@@ -13,6 +13,7 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
     @IBOutlet weak var pageControl: UIPageControl!
     
     var pageController : UIPageViewController!
+    var navController : UINavigationController?
     
     var businesses : [Business] = []
     
@@ -45,6 +46,7 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
         
         businessViewController.business = businesses[index]
         businessViewController.index = index
+        businessViewController.navController = self.navController
         
         return businessViewController
     }
