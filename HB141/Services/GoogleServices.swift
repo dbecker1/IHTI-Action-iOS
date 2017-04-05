@@ -67,10 +67,14 @@ class GooglePlacesService : NSObject {
                         } else {
                             business.image = image;
                         }
+                        
                         if(index == maxIndex) {
                             self.delegate.foundBusinesses(businesses: self.businesses)
                         } else {
                             let newIndex = index + 1
+                            if (newIndex == 19) {
+                                print("here")
+                            }
                             self.loadImages(index: newIndex, maxIndex: maxIndex)
                         }
                     })

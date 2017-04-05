@@ -14,6 +14,8 @@ class BusinessViewController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
+    
+    var navController : UINavigationController?
 
     var index: Int = 0
     
@@ -41,7 +43,13 @@ class BusinessViewController: UIViewController {
     }
     
     func showReport() {
-        performSegue(withIdentifier: "enterReport", sender: nil)
+        let controller = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "ReportID")
+        if let reportController = controller as? ReportViewController {
+            reportController.business = business
+            navController?.pushViewController(reportController, animated: true)
+        } else {
+            performSegue(withIdentifier: "enterReport", sender: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -56,6 +56,7 @@ class MapViewController : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "Embedded PageViewController") {
             self.pageViewController = segue.destination as? BusinessPageViewController
+            self.pageViewController?.navController = self.navigationController
         }
     }
     
