@@ -30,6 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        var storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if FIRAuth.auth()?.currentUser != nil {
+            storyboard = UIStoryboard(name: "Main", bundle: nil)
+        }
+        
+        let initialViewController = storyboard.instantiateInitialViewController()
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
     

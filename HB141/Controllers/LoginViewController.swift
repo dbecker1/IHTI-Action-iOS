@@ -55,7 +55,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
             if error != nil {
                 print("Login Unsuccessful")
             } else {
-                print("Login Successful!!")
+                print("Login Successful")
+                self.toMain()
+                
             }
         }
     }
@@ -70,8 +72,13 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
                 if (callback != nil) {
                     callback()
                 }
+                self.toMain()
             }
         }
+    }
+    
+    func toMain() {
+        self.performSegue(withIdentifier: "toMain", sender: self)
     }
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {

@@ -31,6 +31,16 @@ class MenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signOut(_ sender: UIButton) {
+        do {
+            try FIRAuth.auth()?.signOut()
+            let onboarding = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!
+            self.present(onboarding, animated: true, completion: nil)
+        } catch let signOutError as NSError {
+            print("Error signing out with Facebook: \(signOutError)")
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -283,7 +283,7 @@ class OnboardingPageViewController: UIPageViewController, UIScrollViewDelegate {
     }
     
     func progressButtonClicked(_ button: UIButton) {
-        print("Segue to loginpage");
+        self.performSegue(withIdentifier: "toLogin", sender: self)
     }
     
 }
