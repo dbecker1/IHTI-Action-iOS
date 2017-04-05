@@ -32,6 +32,7 @@
 		FDB2E0211E70C10F00A73091 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2E0201E70C10F00A73091 /* BaseNavigationController.swift */; };
 		FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC517321E4D465D00C5D430 /* MapViewController.swift */; };
 		FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC517391E4D78A200C5D430 /* Business.swift */; };
+		FDCF70411E9595250091BE8B /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF70401E9595250091BE8B /* MoreInformationViewController.swift */; };
 		FDEA130C1E47FC5100868634 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDEA130B1E47FC5100868634 /* Onboarding.storyboard */; };
 		FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDEA130D1E47FCC400868634 /* Login.storyboard */; };
 		FDF59CBB1E749CE800352DC4 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF59CBA1E749CE800352DC4 /* FontAwesome.otf */; };
@@ -69,6 +70,7 @@
 		FDB2E0201E70C10F00A73091 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = Controllers/BaseNavigationController.swift; sourceTree = "<group>"; };
 		FDC517321E4D465D00C5D430 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controllers/MapViewController.swift; sourceTree = "<group>"; };
 		FDC517391E4D78A200C5D430 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Business.swift; path = Models/Business.swift; sourceTree = "<group>"; };
+		FDCF70401E9595250091BE8B /* MoreInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreInformationViewController.swift; path = Controllers/MoreInformationViewController.swift; sourceTree = "<group>"; };
 		FDEA130B1E47FC5100868634 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboarding.storyboard; path = Storyboards/Onboarding.storyboard; sourceTree = "<group>"; };
 		FDEA130D1E47FCC400868634 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		FDF59CBA1E749CE800352DC4 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */,
 				FDF59CBC1E74A38600352DC4 /* MenuViewController.swift */,
 				FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */,
+				FDCF70401E9595250091BE8B /* MoreInformationViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */,
 				FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */,
 				FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */,
+				FDCF70411E9595250091BE8B /* MoreInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
