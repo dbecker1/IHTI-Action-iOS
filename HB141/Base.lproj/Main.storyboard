@@ -55,22 +55,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzO-PM-fmf">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYf-lG-gel">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1b-o6-a9e">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="X" id="deG-Ig-WrR">
+                                        <connections>
+                                            <action selector="cancel:" destination="Gto-Cd-t7S" id="VaG-pa-Srb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="16" style="plain" systemItem="fixedSpace" id="gHe-Hh-fPx"/>
+                                    <barButtonItem title="R" id="2ca-dM-wdO">
+                                        <connections>
+                                            <action selector="refresh:" destination="Gto-Cd-t7S" id="MUa-fg-MCd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="qfz-SY-aE9"/>
+                                    <barButtonItem title="B" id="tGr-hg-7gR">
+                                        <connections>
+                                            <action selector="back:" destination="Gto-Cd-t7S" id="I2t-n9-Ce9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="16" style="plain" systemItem="fixedSpace" id="8rE-h9-HH5"/>
+                                    <barButtonItem title="F" id="HBW-7M-Z5f">
+                                        <connections>
+                                            <action selector="forward:" destination="Gto-Cd-t7S" id="ita-g3-RaT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="r9Z-FB-3gY">
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="XzO-PM-fmf" secondAttribute="trailing" id="AdD-QO-CUz"/>
-                            <constraint firstItem="XzO-PM-fmf" firstAttribute="leading" secondItem="VBa-Gs-gZV" secondAttribute="leading" id="KPK-mG-0Xf"/>
-                            <constraint firstItem="XzO-PM-fmf" firstAttribute="top" secondItem="INS-HD-Jp3" secondAttribute="bottom" id="gEI-wV-fbG"/>
-                            <constraint firstItem="XzO-PM-fmf" firstAttribute="bottom" secondItem="9LZ-Rq-vVc" secondAttribute="top" id="zZG-mU-sda"/>
+                            <constraint firstItem="r9Z-FB-3gY" firstAttribute="centerY" secondItem="MYf-lG-gel" secondAttribute="centerY" id="MEj-Mz-PsV"/>
+                            <constraint firstItem="n1b-o6-a9e" firstAttribute="leading" secondItem="VBa-Gs-gZV" secondAttribute="leading" id="PGW-tz-390"/>
+                            <constraint firstItem="r9Z-FB-3gY" firstAttribute="centerX" secondItem="n1b-o6-a9e" secondAttribute="centerX" id="RVa-nH-cWx"/>
+                            <constraint firstItem="MYf-lG-gel" firstAttribute="trailing" secondItem="n1b-o6-a9e" secondAttribute="trailing" id="TZ9-Xw-JU5"/>
+                            <constraint firstItem="MYf-lG-gel" firstAttribute="bottom" secondItem="9LZ-Rq-vVc" secondAttribute="top" id="Yls-Dk-cad"/>
+                            <constraint firstAttribute="trailing" secondItem="n1b-o6-a9e" secondAttribute="trailing" id="j2n-ee-Z0B"/>
+                            <constraint firstItem="MYf-lG-gel" firstAttribute="top" secondItem="INS-HD-Jp3" secondAttribute="bottom" id="jyg-s7-Rau"/>
+                            <constraint firstItem="n1b-o6-a9e" firstAttribute="bottom" secondItem="9LZ-Rq-vVc" secondAttribute="top" id="lnD-Zg-m7s"/>
+                            <constraint firstItem="MYf-lG-gel" firstAttribute="leading" secondItem="n1b-o6-a9e" secondAttribute="leading" id="wS3-2G-KNK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b71-fr-GdX"/>
                     <connections>
-                        <outlet property="webView" destination="XzO-PM-fmf" id="HOy-ft-Jij"/>
+                        <outlet property="activityIndicator" destination="r9Z-FB-3gY" id="wW2-KJ-HJV"/>
+                        <outlet property="back" destination="tGr-hg-7gR" id="bgQ-5E-bQr"/>
+                        <outlet property="cancel" destination="deG-Ig-WrR" id="v88-V7-DV3"/>
+                        <outlet property="forward" destination="HBW-7M-Z5f" id="qCJ-id-3qU"/>
+                        <outlet property="refresh" destination="2ca-dM-wdO" id="B2X-ds-8qA"/>
+                        <outlet property="webView" destination="MYf-lG-gel" id="qJb-6j-ACF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2W-yl-fVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
