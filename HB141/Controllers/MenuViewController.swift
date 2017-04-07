@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FBSDKCoreKit
-import FBSDKLoginKit
+import Firebase
 
 class MenuViewController: UIViewController {
     @IBOutlet weak var topBackground: UIView!
@@ -22,7 +20,7 @@ class MenuViewController: UIViewController {
         topBackground.backgroundColor = ColorConstants.titleBarColor
 
         // Do any additional setup after loading the view.
-        if let user = FIRAuth.auth()?.currentUser {
+        if let user = AuthManager.shared.current() {
             name.text = user.displayName
             email.text = user.email
         }
@@ -34,17 +32,12 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func signOut(_ sender: UIButton) {
-        do {
-            if (FBSDKAccessToken.current() != nil) {
-                let loginManager = FBSDKLoginManager()
-                loginManager.logOut()
+        AuthManager.shared.logOut() {
+            (isSuccessful) -> Void in
+            if isSuccessful {
+                let onboarding = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!
+                self.present(onboarding, animated: true, completion: nil)
             }
-            try FIRAuth.auth()?.signOut()
-            let onboarding = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!
-            self.present(onboarding, animated: true, completion: nil)
-        } catch let signOutError as NSError {
-            print("Error signing out with Facebook: \(signOutError)")
-            
         }
     }
 

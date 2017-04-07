@@ -17,6 +17,7 @@
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
 		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
 		FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */; };
+		FD3D42621E9843C9002F47F8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D42611E9843C9002F47F8 /* AuthManager.swift */; };
 		FD4E7AF21E6B634D007EEC0C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */; };
 		FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF11E6B634D007EEC0C /* GoogleServices.swift */; };
 		FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF41E6B6355007EEC0C /* FirebaseModels.swift */; };
@@ -53,6 +54,7 @@
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
 		F6C221931E5559E0004A532C /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessViewController.swift; path = Controllers/BusinessViewController.swift; sourceTree = "<group>"; };
 		FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = Controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
+		FD3D42611E9843C9002F47F8 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Services/FirebaseService.swift; sourceTree = "<group>"; };
 		FD4E7AF11E6B634D007EEC0C /* GoogleServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleServices.swift; path = Services/GoogleServices.swift; sourceTree = "<group>"; };
 		FD4E7AF41E6B6355007EEC0C /* FirebaseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseModels.swift; path = Models/FirebaseModels.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				FD570E0A1E49289E00D8904C /* Constants.swift */,
 				E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */,
 				E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */,
+				FD3D42611E9843C9002F47F8 /* AuthManager.swift */,
 			);
 			path = HB141;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				FD570E0B1E49289E00D8904C /* Constants.swift in Sources */,
 				FD4E7AFB1E6B99CD007EEC0C /* ReportViewController.swift in Sources */,
 				FD4E7AF21E6B634D007EEC0C /* FirebaseService.swift in Sources */,
+				FD3D42621E9843C9002F47F8 /* AuthManager.swift in Sources */,
 				F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */,
 				FDF59CC21E74AE6B00352DC4 /* SWRevealViewController.m in Sources */,
 				FDF59CBD1E74A38600352DC4 /* MenuViewController.swift in Sources */,

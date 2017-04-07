@@ -66,14 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             return
         }
         
-        guard let authentication = user.authentication else {
-            return
-        }
-        
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        
         if let loginController = GIDSignIn.sharedInstance().uiDelegate as? LoginViewController {
-            loginController.loginExternal(credential: credential, callback: nil)
+            AuthManager.shared.loginGoogle(user: user) {
+                (_) -> Void in
+                loginController.toMain()
+            }
         }
     }
     

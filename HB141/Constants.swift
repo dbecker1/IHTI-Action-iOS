@@ -51,7 +51,7 @@ struct GoogleConstants {
     
     static let placesApiKey = "AIzaSyBs_NYH0F6kDuDHMcIEaqK_uK5Un9U7LfM"
     
-    static let businessCount = 20
+    static let businessCount = 10
     
     static let dateFormat = "M/d/yy h:mm a" 
 }
