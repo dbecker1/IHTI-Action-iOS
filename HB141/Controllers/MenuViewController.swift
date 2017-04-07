@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class MenuViewController: UIViewController {
     @IBOutlet weak var topBackground: UIView!
@@ -33,6 +35,10 @@ class MenuViewController: UIViewController {
     
     @IBAction func signOut(_ sender: UIButton) {
         do {
+            if (FBSDKAccessToken.current() != nil) {
+                let loginManager = FBSDKLoginManager()
+                loginManager.logOut()
+            }
             try FIRAuth.auth()?.signOut()
             let onboarding = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!
             self.present(onboarding, animated: true, completion: nil)

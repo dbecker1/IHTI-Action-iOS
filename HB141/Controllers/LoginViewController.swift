@@ -78,7 +78,13 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
     }
     
     func toMain() {
-        self.performSegue(withIdentifier: "toMain", sender: self)
+        //self.performSegue(withIdentifier: "toMain", sender: self)
+        
+        //bit of a hack - otherwise segue throws warning on first login from google
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = mainVC
+        
     }
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
@@ -87,7 +93,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
             print("Login Error: \(error)")
         case .success(_, _, let accessToken):
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
-            loginExternal(credential: credential) {
+            self.loginExternal(credential: credential) {
                 let current = FIRAuth.auth()?.currentUser
                 if (current?.email == nil) { // this is a new user and you need to add their email
                     let params = ["fields" : "email"]
