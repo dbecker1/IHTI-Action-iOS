@@ -95,6 +95,28 @@ class AuthManager {
         }
     }
     
+    func userHasStandard() -> Bool {
+        return userHasLoginType(type: "password")
+    }
+    
+    func userHasFacebook() -> Bool {
+        return userHasLoginType(type: "facebook")
+    }
+    
+    func userHasGoogle() -> Bool {
+        return userHasLoginType(type: "google")
+    }
+    
+    private func userHasLoginType(type: String) -> Bool {
+        let user = current()
+        for provider in (user?.providerData)! {
+            if provider.providerID.contains(type) {
+                return true;
+            }
+        }
+        return false
+    }
+    
     private func loginExternal(credential: FIRAuthCredential, completion: ((_ isSuccessful : Bool) -> Void)!) {
         FIRAuth.auth()?.signIn(with: credential) {
             (user, error) in
