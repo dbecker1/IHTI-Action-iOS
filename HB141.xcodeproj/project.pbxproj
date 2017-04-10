@@ -14,6 +14,8 @@
 		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
 		E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */; };
 		E95604067085B066561DEAE5 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC0004D2C1D3250EFF19119 /* Pods_HB141.framework */; };
+		F696775C1E9AC50400F3E4EA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696775B1E9AC50400F3E4EA /* SettingsTableViewController.swift */; };
+		F696775E1E9ADC5500F3E4EA /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696775D1E9ADC5500F3E4EA /* SetNameViewController.swift */; };
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
 		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
 		FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */; };
@@ -53,6 +55,8 @@
 		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
 		E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 800.ttf"; sourceTree = "<group>"; };
 		EAC0004D2C1D3250EFF19119 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F696775B1E9AC50400F3E4EA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Controllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
+		F696775D1E9ADC5500F3E4EA /* SetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetNameViewController.swift; path = Controllers/SetNameViewController.swift; sourceTree = "<group>"; };
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
 		F6C221931E5559E0004A532C /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessViewController.swift; path = Controllers/BusinessViewController.swift; sourceTree = "<group>"; };
 		FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = Controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FD37D6E21E9AB74A005B8F01 /* SettingsViewController.swift */,
+				F696775B1E9AC50400F3E4EA /* SettingsTableViewController.swift */,
 				FDB2E0201E70C10F00A73091 /* BaseNavigationController.swift */,
 				E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */,
 				FDABA8501E47C67400B817DA /* ViewController.swift */,
@@ -179,6 +184,7 @@
 				FDF59CBC1E74A38600352DC4 /* MenuViewController.swift */,
 				FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */,
 				FDCF70401E9595250091BE8B /* MoreInformationViewController.swift */,
+				F696775D1E9ADC5500F3E4EA /* SetNameViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -364,7 +370,9 @@
 				F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */,
 				FDF59CC21E74AE6B00352DC4 /* SWRevealViewController.m in Sources */,
 				FDF59CBD1E74A38600352DC4 /* MenuViewController.swift in Sources */,
+				F696775C1E9AC50400F3E4EA /* SettingsTableViewController.swift in Sources */,
 				FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */,
+				F696775E1E9ADC5500F3E4EA /* SetNameViewController.swift in Sources */,
 				FDB2E0211E70C10F00A73091 /* BaseNavigationController.swift in Sources */,
 				949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */,
 				FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */,
