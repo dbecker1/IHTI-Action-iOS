@@ -81,6 +81,28 @@ class AuthManager {
 
     }
     
+    func createUserStandard(emailAddress: String, password: String, name: String, completion: ((_ isSuccessful: Bool) -> Void)!) {
+        FIRAuth.auth()?.createUser(withEmail: emailAddress, password: password) {
+            (user, error) -> Void in
+            if completion != nil {
+                if error != nil {
+                    completion(false)
+                } else {
+                    let change = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+                    change?.displayName = name
+                    change?.commitChanges() {
+                        (error) -> Void in
+                        if error != nil {
+                            completion(false)
+                        } else {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func updateEmail(emailAddress: String, completion: ((_ isSuccessful: Bool) -> Void)!) {
         FIRAuth.auth()?.currentUser?.updateEmail(emailAddress) {
             (error) -> Void in
