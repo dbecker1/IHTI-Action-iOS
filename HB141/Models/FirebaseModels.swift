@@ -24,7 +24,7 @@ class Report : FIRDataObject {
     public var VID: String = ""
     
     override func toDictionary() -> Dictionary<String, Any> {
-        return self.dictionaryWithValues(forKeys: ["Comment", "Datetime", "EID", "NoView", "PublicView", "RestroomView", "VID"])
+        return self.dictionaryWithValues(forKeys: ["Comment", "Datetime", "EID", "No View", "Public View", "Restroom View", "VID"])
     }
 }
 

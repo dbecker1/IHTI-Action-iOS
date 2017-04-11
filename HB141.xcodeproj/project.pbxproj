@@ -10,6 +10,9 @@
 		949017461E8F3B530066D3AC /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949017451E8F3B530066D3AC /* Registration.storyboard */; };
 		949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949017471E8F3C0E0066D3AC /* RegistrationController.swift */; };
 		C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0256C371E6C9AEC007012EB /* LoginViewController.swift */; };
+		E313B5C21E9C6522003E7CA1 /* PreviousReports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E313B5C11E9C6522003E7CA1 /* PreviousReports.storyboard */; };
+		E313B5C41E9C6B08003E7CA1 /* PreviousReportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E313B5C31E9C6B08003E7CA1 /* PreviousReportsController.swift */; };
+		E313B5C61E9C6B22003E7CA1 /* PreviousReportDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E313B5C51E9C6B22003E7CA1 /* PreviousReportDetailController.swift */; };
 		E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */; };
 		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
 		E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */; };
@@ -49,6 +52,9 @@
 		949017451E8F3B530066D3AC /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Registration.storyboard; path = Storyboards/Registration.storyboard; sourceTree = "<group>"; };
 		949017471E8F3C0E0066D3AC /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationController.swift; path = Controllers/RegistrationController.swift; sourceTree = "<group>"; };
 		C0256C371E6C9AEC007012EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		E313B5C11E9C6522003E7CA1 /* PreviousReports.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PreviousReports.storyboard; path = Storyboards/PreviousReports.storyboard; sourceTree = "<group>"; };
+		E313B5C31E9C6B08003E7CA1 /* PreviousReportsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviousReportsController.swift; path = Controllers/PreviousReportsController.swift; sourceTree = "<group>"; };
+		E313B5C51E9C6B22003E7CA1 /* PreviousReportDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviousReportDetailController.swift; path = Controllers/PreviousReportDetailController.swift; sourceTree = "<group>"; };
 		E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = Controllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
 		E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 800.ttf"; sourceTree = "<group>"; };
@@ -179,6 +185,8 @@
 				FDF59CBC1E74A38600352DC4 /* MenuViewController.swift */,
 				FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */,
 				FDCF70401E9595250091BE8B /* MoreInformationViewController.swift */,
+				E313B5C31E9C6B08003E7CA1 /* PreviousReportsController.swift */,
+				E313B5C51E9C6B22003E7CA1 /* PreviousReportDetailController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				FDEA130B1E47FC5100868634 /* Onboarding.storyboard */,
 				FDEA130D1E47FCC400868634 /* Login.storyboard */,
 				949017451E8F3B530066D3AC /* Registration.storyboard */,
+				E313B5C11E9C6522003E7CA1 /* PreviousReports.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 				TargetAttributes = {
 					FDABA8391E47C56600B817DA = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = K4V8649U3S;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -292,6 +302,7 @@
 				FD9CA3361E91FD9400164E21 /* GoogleService-Info.plist in Resources */,
 				FDF59CBB1E749CE800352DC4 /* FontAwesome.otf in Resources */,
 				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
+				E313B5C21E9C6522003E7CA1 /* PreviousReports.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,8 +361,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E313B5C61E9C6B22003E7CA1 /* PreviousReportDetailController.swift in Sources */,
 				C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */,
 				E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */,
+				E313B5C41E9C6B08003E7CA1 /* PreviousReportsController.swift in Sources */,
 				FD37D6E31E9AB74A005B8F01 /* SettingsViewController.swift in Sources */,
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
@@ -495,7 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K4V8649U3S;
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
@@ -512,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K4V8649U3S;
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
