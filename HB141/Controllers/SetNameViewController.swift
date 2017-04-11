@@ -15,18 +15,27 @@ class SetNameViewController: UIViewController {
     
     @IBOutlet weak var text_field: UITextField!
     @IBAction func save_name(_ sender: Any) {
-
+        let stack = self.navigationController!.viewControllers
+        let parent = (stack[stack.count-2]).childViewControllers.last as! SettingsTableViewController
         if (type! == "name") {
             AuthManager.shared.updateName(name: text_field.text!, completion: {(result: Bool) -> Void in
-                return
+                if (result) {
+                    parent.user_name.setTitle(self.text_field.text, for: .normal)
+                    self.navigationController!.popViewController(animated: true)
+                }
             })
         } else if (type! == "email") {
             AuthManager.shared.updateEmail(emailAddress: text_field.text!, completion: {(result: Bool) -> Void in
-                return
+                if (result) {
+                    parent.user_email.setTitle(self.text_field.text, for: .normal)
+                    self.navigationController!.popViewController(animated: true)
+                }
             })
         } else if (type! == "pass") {
             AuthManager.shared.updatePassword(password: text_field.text!, completion: {(result: Bool) -> Void in
-                return
+                if (result) {
+                    self.navigationController!.popViewController(animated: true)
+                }
             })
         }
     }
@@ -43,14 +52,6 @@ class SetNameViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (type == "name" || type == "email") {
-            name = text_field.text!
-            print("NEW NAME ++++++++++++")
-            print(self.name!)
-        }
     }
     
 

@@ -61,7 +61,6 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="save_name:" destination="QJQ-Cl-Zhb" eventType="touchUpInside" id="cWC-mr-nea"/>
-                                    <segue destination="hqA-tf-Mma" kind="unwind" unwindAction="unwindToThisViewControllerWithSegue:" id="qHo-gk-sOU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,7 +71,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3I-qp-l3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="hqA-tf-Mma" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="189.59999999999999" y="504.19790104947532"/>
         </scene>
@@ -280,6 +278,6 @@
         <image name="Forward-50" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="smD-xW-nNW"/>
+        <segue reference="4hL-3s-V3i"/>
     </inferredMetricsTieBreakers>
 </document>

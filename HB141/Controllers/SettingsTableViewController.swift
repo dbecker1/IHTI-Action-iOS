@@ -82,16 +82,6 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func unwindToThisViewController(segue: UIStoryboardSegue){
-        let source = segue.source as! SetNameViewController
-        if (source.type == "name") {
-            user_name.setTitle(source.name, for: .normal)
-        }
-        print("SOURCE TYPE +++++++++++++++++")
-        print(source.type!)
-        print("SOURCE NAME +++++++++++++++++")
-        print(source.name!)
-    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
