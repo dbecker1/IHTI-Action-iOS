@@ -8,11 +8,14 @@
 
 import UIKit
 import Firebase
+import FacebookLogin
+import FacebookCore
+import GoogleSignIn
 
+class SettingsTableViewController: UITableViewController, GIDSignInDelegate, GIDSignInUIDelegate{
 
-class SettingsTableViewController: UITableViewController {
-    
-
+    @IBOutlet weak var clickToAddGoogle: UILabel!
+    @IBOutlet weak var clickToAddFacebook: UILabel!
     @IBOutlet weak var user_name: UIButton!
     @IBOutlet weak var user_email: UIButton!
     @IBOutlet weak var hasFaceBookCheckmark: UIImageView!
@@ -60,12 +63,60 @@ class SettingsTableViewController: UITableViewController {
         user_email.setTitle(FIRAuth.auth()!.currentUser!.email, for: .normal)
         if (!AuthManager.shared.userHasFacebook()) {
             hasFaceBookCheckmark.isHidden = true
+            clickToAddFacebook.isHidden = false
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.addFacebook))
+            clickToAddFacebook.addGestureRecognizer(tap)
         }
         if (!AuthManager.shared.userHasGoogle()) {
             hasGoogleCheckmark.isHidden = true
+            clickToAddGoogle.isHidden = false
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.addGoogle))
+            clickToAddGoogle.addGestureRecognizer(tap)
         }
     }
 
+    func addFacebook() {
+        self.clickToAddFacebook.isHidden = true
+        let manager = LoginManager()
+        manager.logIn([ReadPermission.publicProfile], viewController: self) {
+            (result) -> Void in
+            switch result {
+            case .success(_, _, let accessToken):
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+                AuthManager.shared.current()?.link(with: credential) {
+                    (user, error) -> Void in
+                    if error == nil {
+                        self.hasFaceBookCheckmark.isHidden = false
+                    }
+                }
+            default:
+                self.clickToAddFacebook.isHidden = false
+                break
+            }
+            
+        }
+    }
+    
+    func addGoogle() {
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error) != nil {
+            return
+        }
+        self.clickToAddGoogle.isHidden = true
+        AuthManager.shared.loginGoogle(user: user) {
+            (_ isSuccessful) -> Void in
+            if (isSuccessful) {
+                self.hasGoogleCheckmark.isHidden = false
+            } else {
+                //error
+            }
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "setName" ) {
@@ -82,6 +133,14 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func logOut(_ sender: UIButton) {
+        AuthManager.shared.logOut() {
+            (isSuccessful) -> Void in
+            if isSuccessful, let viewController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() {
+                self.present(viewController, animated: true, completion: nil)
+            }
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
