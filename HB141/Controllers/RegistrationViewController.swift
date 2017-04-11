@@ -20,9 +20,26 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var confirmPassword: UITextField!
     
+    @IBOutlet weak var logoImage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         self.view.applyGradient(colours: [ColorConstants.gradientPrimaryDark, ColorConstants.gradientPrimary])
+        
+        errorText.tintColor = UIColor.white
+        
+        logoImage.contentMode = UIViewContentMode.scaleAspectFit
+        
+        fullName.backgroundColor = nil
+        email.tintColor = UIColor.white
+        password.backgroundColor = nil
+        confirmPassword.tintColor = UIColor.white
+        
+        fullName.backgroundColor = UIColor.white
+        email.backgroundColor = UIColor.white
+        password.backgroundColor = UIColor.white
+        confirmPassword.backgroundColor = UIColor.white
         
         fullName.delegate = self
         email.delegate = self

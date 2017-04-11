@@ -58,6 +58,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <segue destination="H59-9J-vB1" kind="show" id="Xoe-pU-k3N"/>
+                                </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logoihti" translatesAutoresizingMaskIntoConstraints="NO" id="9Bq-hI-hNK">
                                 <rect key="frame" x="123" y="51" width="130" height="39"/>
