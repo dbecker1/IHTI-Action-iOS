@@ -15,7 +15,7 @@ import GoogleSignIn
 import FBSDKCoreKit
 import FirebaseDatabase
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GMSPlacesClient.provideAPIKey(GoogleConstants.placesApiKey)
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         var storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
@@ -59,23 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let facebookHandled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         
         return googleHandled || facebookHandled
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error) != nil {
-            return
-        }
-        
-        if let loginController = GIDSignIn.sharedInstance().uiDelegate as? LoginViewController {
-            AuthManager.shared.loginGoogle(user: user) {
-                (_) -> Void in
-                loginController.toMain()
-            }
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        //Code for when user disconnects from app
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

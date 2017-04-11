@@ -150,6 +150,9 @@ class AuthManager {
                 let loginManager = LoginManager()
                 loginManager.logOut()
             }
+            if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+                GIDSignIn.sharedInstance().signOut()
+            }
             try FIRAuth.auth()?.signOut()
             completion(true)
         } catch let error as NSError {

@@ -11,7 +11,7 @@ import Firebase
 import GoogleSignIn
 import FacebookLogin
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate {
+class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate, GIDSignInDelegate {
     
 
     @IBOutlet weak var Username: UITextField!
@@ -23,6 +23,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
@@ -94,5 +95,24 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
             print("Error signing out with Facebook: \(signOutError)")
         }
         
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error) != nil {
+            return
+        }
+        
+        AuthManager.shared.loginGoogle(user: user) {
+            (_ isSuccessful) -> Void in
+            if (isSuccessful) {
+                self.toMain()
+            } else {
+                //error
+            }
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        //Code for when user disconnects from app
     }
 }
