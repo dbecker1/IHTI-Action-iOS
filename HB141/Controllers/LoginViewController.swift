@@ -14,6 +14,9 @@ import FacebookLogin
 class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate, GIDSignInDelegate {
     
 
+    @IBOutlet weak var signUp: UIButton!
+    @IBOutlet weak var forgotPassword: UIButton!
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var Username: UITextField!
     @IBOutlet weak var Password: UITextField!
     
@@ -21,6 +24,17 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        logoImage.contentMode = UIViewContentMode.scaleAspectFit
+        
+        signUp.backgroundColor = nil
+        signUp.tintColor = UIColor.white
+        forgotPassword.backgroundColor = nil
+        forgotPassword.tintColor = UIColor.white
+        Username.backgroundColor = UIColor.white
+        Password.backgroundColor = UIColor.white
+        
+        self.view.applyGradient(colours: [ColorConstants.gradientPrimaryDark, ColorConstants.gradientPrimary])
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
@@ -114,5 +128,20 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         //Code for when user disconnects from app
+    }
+}
+
+
+extension UIView {
+    func applyGradient(colours: [UIColor]) -> Void {
+        self.applyGradient(colours: colours, locations: nil)
+    }
+    
+    func applyGradient(colours: [UIColor], locations: [NSNumber]?) -> Void {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = colours.map { $0.cgColor }
+        gradient.locations = locations
+        self.layer.insertSublayer(gradient, at: 0)
     }
 }
