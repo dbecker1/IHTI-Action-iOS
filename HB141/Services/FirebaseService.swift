@@ -46,6 +46,19 @@ class FirebaseService : NSObject {
         
     }
     
+    func retrieveAll(callback: @escaping (([FIRDataObject]) -> Void)) {
+        if let table = table {
+            ref.child(table.rawValue).observeSingleEvent(of: .value, with: {
+                (snapshot) in
+                var result : [FIRDataObject] = [FIRDataObject]()
+                for child in snapshot.children {
+                    result.append(self.convertSnapshot(snapshot: child as! FIRDataSnapshot))
+                }
+                callback(result)
+            })
+        }
+    }
+    
     func getKey() -> String {
         let key = ref.child((table?.rawValue)!).childByAutoId().key
         
