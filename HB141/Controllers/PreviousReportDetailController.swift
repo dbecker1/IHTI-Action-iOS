@@ -22,10 +22,7 @@ class PreviousReportDetailController: UIViewController {
     @IBOutlet weak var datetimeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
-    @IBOutlet weak var noviewLabel: UILabel!
-    @IBOutlet weak var publicviewLabel: UILabel!
-    @IBOutlet weak var restroomviewLabel: UILabel!
-    
+    @IBOutlet weak var viewLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
     override func viewDidLoad() {
@@ -33,19 +30,19 @@ class PreviousReportDetailController: UIViewController {
         
         locationLabel.text = "\(location!)";
         datetimeLabel.text = "\(datetime!)";
-        addressLabel.text = "\(address)";
-        commentLabel.text = "\(comment)";
+        addressLabel.text = "\(address!)";
+        commentLabel.text = "\(comment!)";
         
-        if (noview != "No View") {
-            noviewLabel.isHidden = false;
-        }
-        
-        if (publicview != "Public View") {
-            publicviewLabel.isHidden = false;
-        }
-        
-        if (restroomview != "Restroom View") {
-            restroomviewLabel.isHidden = false;
+        if (noview == "true") {
+            viewLabel.text = "Not Posted."
+        } else if (publicview == "true" && restroomview == "true") {
+            viewLabel.text = "Public View and Restroom View."
+        } else if (publicview == "true") {
+            viewLabel.text = "Public View."
+        } else if (restroomview == "true") {
+            viewLabel.text = "Restroom View."
+        } else {
+            viewLabel.text = ""
         }
     }
 }

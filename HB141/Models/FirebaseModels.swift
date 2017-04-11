@@ -23,6 +23,8 @@ class Report : FIRDataObject {
     public var RestroomView: String = ""
     public var VID: String = ""
     
+    public var establishment: Establishment? = nil
+    
     override func toDictionary() -> Dictionary<String, Any> {
         return self.dictionaryWithValues(forKeys: ["Comment", "Datetime", "EID", "No View", "Public View", "Restroom View", "VID"])
     }
