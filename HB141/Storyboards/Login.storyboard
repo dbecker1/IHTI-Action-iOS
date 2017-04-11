@@ -153,6 +153,14 @@
             </objects>
             <point key="canvasLocation" x="734" y="109"/>
         </scene>
+        <!--Registration-->
+        <scene sceneID="CzN-UH-smZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Registration" id="H59-9J-vB1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WF4-O5-XmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739" y="181"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logoihti" width="500" height="153"/>

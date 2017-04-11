@@ -81,11 +81,77 @@ class AuthManager {
 
     }
     
+    func createUserStandard(emailAddress: String, password: String, name: String, completion: ((_ isSuccessful: Bool) -> Void)!) {
+        FIRAuth.auth()?.createUser(withEmail: emailAddress, password: password) {
+            (user, error) -> Void in
+            if completion != nil {
+                if error != nil {
+                    completion(false)
+                } else {
+                    let change = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+                    change?.displayName = name
+                    change?.commitChanges() {
+                        (error) -> Void in
+                        if error != nil {
+                            completion(false)
+                        } else {
+                            completion(true)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateEmail(emailAddress: String, completion: ((_ isSuccessful: Bool) -> Void)!) {
+        FIRAuth.auth()?.currentUser?.updateEmail(emailAddress) {
+            (error) -> Void in
+            if completion != nil {
+                if error != nil {
+                    completion(false)
+                } else {
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    func updatePassword(password: String, completion: ((_ isSuccessful: Bool) -> Void)!) {
+        FIRAuth.auth()?.currentUser?.updatePassword(password) {
+            (error) -> Void in
+            if completion != nil {
+                if error != nil {
+                    completion(false)
+                } else {
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    func updateName(name: String, completion: ((_ isSuccessful: Bool) -> Void)!) {
+        let change = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+        change?.displayName = name
+        change?.commitChanges(){
+            (error) -> Void in
+            if completion != nil {
+                if error != nil {
+                    completion(false)
+                } else {
+                    completion(true)
+                }
+            }
+        }
+    }
+    
     func logOut(completion: ((_ isSuccessful: Bool) -> Void)!) {
         do {
             if AccessToken.current != nil { // authenticated with Facebook
                 let loginManager = LoginManager()
                 loginManager.logOut()
+            }
+            if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+                GIDSignIn.sharedInstance().signOut()
             }
             try FIRAuth.auth()?.signOut()
             completion(true)

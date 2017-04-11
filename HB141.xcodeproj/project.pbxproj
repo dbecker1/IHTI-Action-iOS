@@ -8,15 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		949017461E8F3B530066D3AC /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949017451E8F3B530066D3AC /* Registration.storyboard */; };
-		949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949017471E8F3C0E0066D3AC /* RegistrationController.swift */; };
+		949017481E8F3C0E0066D3AC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949017471E8F3C0E0066D3AC /* RegistrationViewController.swift */; };
 		C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0256C371E6C9AEC007012EB /* LoginViewController.swift */; };
+		E313B5C21E9C6522003E7CA1 /* PreviousReports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E313B5C11E9C6522003E7CA1 /* PreviousReports.storyboard */; };
+		E313B5C41E9C6B08003E7CA1 /* PreviousReportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E313B5C31E9C6B08003E7CA1 /* PreviousReportsController.swift */; };
+		E313B5C61E9C6B22003E7CA1 /* PreviousReportDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E313B5C51E9C6B22003E7CA1 /* PreviousReportDetailController.swift */; };
 		E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */; };
 		E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */; };
 		E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */; };
 		E95604067085B066561DEAE5 /* Pods_HB141.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC0004D2C1D3250EFF19119 /* Pods_HB141.framework */; };
+		F696775C1E9AC50400F3E4EA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696775B1E9AC50400F3E4EA /* SettingsTableViewController.swift */; };
+		F696775E1E9ADC5500F3E4EA /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696775D1E9ADC5500F3E4EA /* SetNameViewController.swift */; };
 		F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221911E55598A004A532C /* BusinessPageViewController.swift */; };
 		F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C221931E5559E0004A532C /* BusinessViewController.swift */; };
 		FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */; };
+		FD37D6DF1E9AB73A005B8F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD37D6DE1E9AB73A005B8F01 /* Assets.xcassets */; };
+		FD37D6E11E9AB744005B8F01 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD37D6E01E9AB744005B8F01 /* Settings.storyboard */; };
+		FD37D6E31E9AB74A005B8F01 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37D6E21E9AB74A005B8F01 /* SettingsViewController.swift */; };
 		FD3D42621E9843C9002F47F8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D42611E9843C9002F47F8 /* AuthManager.swift */; };
 		FD4E7AF21E6B634D007EEC0C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */; };
 		FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF11E6B634D007EEC0C /* GoogleServices.swift */; };
@@ -27,7 +35,6 @@
 		FD9CA3361E91FD9400164E21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD9CA3351E91FD9400164E21 /* GoogleService-Info.plist */; };
 		FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABA83D1E47C56600B817DA /* AppDelegate.swift */; };
 		FDABA8431E47C56600B817DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDABA8411E47C56600B817DA /* Main.storyboard */; };
-		FDABA8451E47C56600B817DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDABA8441E47C56600B817DA /* Assets.xcassets */; };
 		FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDABA8461E47C56600B817DA /* LaunchScreen.storyboard */; };
 		FDABA8511E47C67400B817DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABA8501E47C67400B817DA /* ViewController.swift */; };
 		FDB2E0211E70C10F00A73091 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2E0201E70C10F00A73091 /* BaseNavigationController.swift */; };
@@ -45,15 +52,23 @@
 		580A0D92CCB062954CBF03DF /* Pods-HB141.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.debug.xcconfig"; sourceTree = "<group>"; };
 		733550DC9A912989D3AD7D87 /* Pods-HB141.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB141.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB141/Pods-HB141.release.xcconfig"; sourceTree = "<group>"; };
 		949017451E8F3B530066D3AC /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Registration.storyboard; path = Storyboards/Registration.storyboard; sourceTree = "<group>"; };
-		949017471E8F3C0E0066D3AC /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationController.swift; path = Controllers/RegistrationController.swift; sourceTree = "<group>"; };
+		949017471E8F3C0E0066D3AC /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = Controllers/RegistrationViewController.swift; sourceTree = "<group>"; };
 		C0256C371E6C9AEC007012EB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		E313B5C11E9C6522003E7CA1 /* PreviousReports.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PreviousReports.storyboard; path = Storyboards/PreviousReports.storyboard; sourceTree = "<group>"; };
+		E313B5C31E9C6B08003E7CA1 /* PreviousReportsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviousReportsController.swift; path = Controllers/PreviousReportsController.swift; sourceTree = "<group>"; };
+		E313B5C51E9C6B22003E7CA1 /* PreviousReportDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviousReportDetailController.swift; path = Controllers/PreviousReportDetailController.swift; sourceTree = "<group>"; };
 		E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = Controllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		E3EC62CC1E6B86B3005B12F2 /* Changa 200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 200.ttf"; sourceTree = "<group>"; };
 		E3EC62CD1E6B86B3005B12F2 /* Changa 800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Changa 800.ttf"; sourceTree = "<group>"; };
 		EAC0004D2C1D3250EFF19119 /* Pods_HB141.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB141.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F696775B1E9AC50400F3E4EA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Controllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
+		F696775D1E9ADC5500F3E4EA /* SetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetNameViewController.swift; path = Controllers/SetNameViewController.swift; sourceTree = "<group>"; };
 		F6C221911E55598A004A532C /* BusinessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessPageViewController.swift; path = Controllers/BusinessPageViewController.swift; sourceTree = "<group>"; };
 		F6C221931E5559E0004A532C /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessViewController.swift; path = Controllers/BusinessViewController.swift; sourceTree = "<group>"; };
 		FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = Controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
+		FD37D6DE1E9AB73A005B8F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD37D6E01E9AB744005B8F01 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		FD37D6E21E9AB74A005B8F01 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FD3D42611E9843C9002F47F8 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Services/FirebaseService.swift; sourceTree = "<group>"; };
 		FD4E7AF11E6B634D007EEC0C /* GoogleServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleServices.swift; path = Services/GoogleServices.swift; sourceTree = "<group>"; };
@@ -65,7 +80,6 @@
 		FDABA83A1E47C56600B817DA /* HB141.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HB141.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABA83D1E47C56600B817DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDABA8421E47C56600B817DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FDABA8441E47C56600B817DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDABA8471E47C56600B817DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDABA8491E47C56600B817DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDABA8501E47C67400B817DA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +162,7 @@
 				FDABA8521E47C6B200B817DA /* Storyboards */,
 				FDABA84F1E47C64100B817DA /* Controllers */,
 				FDABA83D1E47C56600B817DA /* AppDelegate.swift */,
-				FDABA8441E47C56600B817DA /* Assets.xcassets */,
+				FD37D6DE1E9AB73A005B8F01 /* Assets.xcassets */,
 				FDABA8491E47C56600B817DA /* Info.plist */,
 				FDF59CBA1E749CE800352DC4 /* FontAwesome.otf */,
 				FD570E0A1E49289E00D8904C /* Constants.swift */,
@@ -162,6 +176,8 @@
 		FDABA84F1E47C64100B817DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD37D6E21E9AB74A005B8F01 /* SettingsViewController.swift */,
+				F696775B1E9AC50400F3E4EA /* SettingsTableViewController.swift */,
 				FDB2E0201E70C10F00A73091 /* BaseNavigationController.swift */,
 				E31C689B1E5016C200CE10FC /* OnboardingPageViewController.swift */,
 				FDABA8501E47C67400B817DA /* ViewController.swift */,
@@ -169,11 +185,14 @@
 				F6C221911E55598A004A532C /* BusinessPageViewController.swift */,
 				F6C221931E5559E0004A532C /* BusinessViewController.swift */,
 				C0256C371E6C9AEC007012EB /* LoginViewController.swift */,
-				949017471E8F3C0E0066D3AC /* RegistrationController.swift */,
+				949017471E8F3C0E0066D3AC /* RegistrationViewController.swift */,
 				FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */,
 				FDF59CBC1E74A38600352DC4 /* MenuViewController.swift */,
 				FD03F98E1E74B72600528C9C /* MenuTableViewController.swift */,
 				FDCF70401E9595250091BE8B /* MoreInformationViewController.swift */,
+				F696775D1E9ADC5500F3E4EA /* SetNameViewController.swift */,
+				E313B5C31E9C6B08003E7CA1 /* PreviousReportsController.swift */,
+				E313B5C51E9C6B22003E7CA1 /* PreviousReportDetailController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -181,12 +200,14 @@
 		FDABA8521E47C6B200B817DA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				FD37D6E01E9AB744005B8F01 /* Settings.storyboard */,
 				FD4E7AF81E6B99C0007EEC0C /* Map.storyboard */,
 				FDABA8461E47C56600B817DA /* LaunchScreen.storyboard */,
 				FDABA8411E47C56600B817DA /* Main.storyboard */,
 				FDEA130B1E47FC5100868634 /* Onboarding.storyboard */,
 				FDEA130D1E47FCC400868634 /* Login.storyboard */,
 				949017451E8F3B530066D3AC /* Registration.storyboard */,
+				E313B5C11E9C6522003E7CA1 /* PreviousReports.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -246,6 +267,7 @@
 				TargetAttributes = {
 					FDABA8391E47C56600B817DA = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = K4V8649U3S;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -276,8 +298,9 @@
 			files = (
 				FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */,
 				949017461E8F3B530066D3AC /* Registration.storyboard in Resources */,
+				FD37D6DF1E9AB73A005B8F01 /* Assets.xcassets in Resources */,
+				FD37D6E11E9AB744005B8F01 /* Settings.storyboard in Resources */,
 				FD4E7AF91E6B99C0007EEC0C /* Map.storyboard in Resources */,
-				FDABA8451E47C56600B817DA /* Assets.xcassets in Resources */,
 				FDABA8431E47C56600B817DA /* Main.storyboard in Resources */,
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
 				E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */,
@@ -285,6 +308,7 @@
 				FD9CA3361E91FD9400164E21 /* GoogleService-Info.plist in Resources */,
 				FDF59CBB1E749CE800352DC4 /* FontAwesome.otf in Resources */,
 				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
+				E313B5C21E9C6522003E7CA1 /* PreviousReports.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +367,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E313B5C61E9C6B22003E7CA1 /* PreviousReportDetailController.swift in Sources */,
 				C0256C381E6C9AEC007012EB /* LoginViewController.swift in Sources */,
 				E31C689C1E5016C200CE10FC /* OnboardingPageViewController.swift in Sources */,
+				E313B5C41E9C6B08003E7CA1 /* PreviousReportsController.swift in Sources */,
+				FD37D6E31E9AB74A005B8F01 /* SettingsViewController.swift in Sources */,
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
 				FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */,
@@ -356,9 +383,11 @@
 				F6C221921E55598A004A532C /* BusinessPageViewController.swift in Sources */,
 				FDF59CC21E74AE6B00352DC4 /* SWRevealViewController.m in Sources */,
 				FDF59CBD1E74A38600352DC4 /* MenuViewController.swift in Sources */,
+				F696775C1E9AC50400F3E4EA /* SettingsTableViewController.swift in Sources */,
 				FDC5173A1E4D78A200C5D430 /* Business.swift in Sources */,
+				F696775E1E9ADC5500F3E4EA /* SetNameViewController.swift in Sources */,
 				FDB2E0211E70C10F00A73091 /* BaseNavigationController.swift in Sources */,
-				949017481E8F3C0E0066D3AC /* RegistrationController.swift in Sources */,
+				949017481E8F3C0E0066D3AC /* RegistrationViewController.swift in Sources */,
 				FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */,
 				FDC517331E4D465D00C5D430 /* MapViewController.swift in Sources */,
 				FD4E7AF31E6B634D007EEC0C /* GoogleServices.swift in Sources */,
@@ -487,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K4V8649U3S;
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
@@ -504,7 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K4V8649U3S;
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
