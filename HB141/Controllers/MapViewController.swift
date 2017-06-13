@@ -57,6 +57,7 @@ class MapViewController : UIViewController {
         if (segue.identifier == "Embedded PageViewController") {
             self.pageViewController = segue.destination as? BusinessPageViewController
             self.pageViewController?.navController = self.navigationController
+            self.pageViewController?.changeMap = self
         }
     }
     
@@ -105,4 +106,20 @@ extension MapViewController : GooglePlacesDelegate {
             pageViewContainer.isHidden = false
         }
     }
+}
+
+extension MapViewController : MapViewChangeProtocol {
+    func moveMap(to coordinate: CLLocationCoordinate2D) {
+        let position = GMSCameraPosition(target: coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        mapView.animate(to: position)
+        
+        mapView.clear()
+        
+        let marker = GMSMarker(position: coordinate)
+        marker.map = mapView
+    }
+}
+
+protocol MapViewChangeProtocol {
+    func moveMap(to coordinate: CLLocationCoordinate2D)
 }

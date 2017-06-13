@@ -43,6 +43,7 @@ class GooglePlacesService : NSObject {
                     business.businessAddress = place.place.formattedAddress
                     business.businessPhone = place.place.phoneNumber
                     business.businessWebsite = place.place.website?.absoluteString
+                    business.location = place.place.coordinate
                     self.businesses.append(business)
                     print("\(business.businessName!)")
                 }

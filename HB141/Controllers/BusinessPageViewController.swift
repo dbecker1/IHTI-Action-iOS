@@ -14,6 +14,7 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
     
     var pageController : UIPageViewController!
     var navController : UINavigationController?
+    var changeMap : MapViewChangeProtocol?
     
     var businesses : [Business] = []
     
@@ -36,6 +37,8 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
         self.businesses = newBusinesses
         
         pageController.setViewControllers([getViewController(atIndex: 0)], direction: .forward, animated: true, completion: nil)
+        
+        changeMap?.moveMap(to: businesses[0].location!)
         
         pageControl.numberOfPages = businesses.count
         pageControl.currentPage = 0
@@ -86,6 +89,7 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         let controller = pendingViewControllers.first as! BusinessViewController
         pendingIndex = businesses.index(of: controller.business!)
+        changeMap?.moveMap(to: (controller.business?.location)!)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {

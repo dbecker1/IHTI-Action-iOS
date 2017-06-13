@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class Business : NSObject {
     var businessName : String?
@@ -15,6 +16,7 @@ class Business : NSObject {
     var businessAddress : String?
     var businessPhone : String?
     var businessWebsite : String?
+    var location : CLLocationCoordinate2D?
     var placeID : String?
     // I know this violates the idea of separating model from view, but it simplifies things - Daniel
     var image : UIImage?
