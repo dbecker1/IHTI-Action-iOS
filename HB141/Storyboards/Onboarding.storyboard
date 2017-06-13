@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pW0-qT-j0Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pW0-qT-j0Q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,16 +64,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0t-7b-fhh" userLabel="ContentView">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="178.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoihti" translatesAutoresizingMaskIntoConstraints="NO" id="SjL-KV-XGf">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoncchr" translatesAutoresizingMaskIntoConstraints="NO" id="dWK-Jx-Anc">
                                                         <rect key="frame" x="0.0" y="0.0" width="154" height="120"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="JkZ-ge-44u"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoncchr" translatesAutoresizingMaskIntoConstraints="NO" id="dWK-Jx-Anc">
-                                                        <rect key="frame" x="169" y="0.0" width="154" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="Xcg-XE-WG0"/>
+                                                            <constraint firstAttribute="height" constant="120" id="gJF-fo-4k9"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXI-EH-OS1">
@@ -89,19 +83,26 @@
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoihti" translatesAutoresizingMaskIntoConstraints="NO" id="SjL-KV-XGf">
+                                                        <rect key="frame" x="169" y="0.0" width="154" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="154" id="UrT-q7-KsO"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="dWK-Jx-Anc" firstAttribute="width" secondItem="SjL-KV-XGf" secondAttribute="width" id="59j-Fg-Qon"/>
+                                                    <constraint firstItem="iXI-EH-OS1" firstAttribute="top" secondItem="dWK-Jx-Anc" secondAttribute="bottom" id="0tz-ZK-OLl"/>
+                                                    <constraint firstItem="SjL-KV-XGf" firstAttribute="trailing" secondItem="iXI-EH-OS1" secondAttribute="trailing" id="5Fj-dM-dwf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SjL-KV-XGf" secondAttribute="trailing" id="7bq-J0-4Ya"/>
+                                                    <constraint firstItem="dWK-Jx-Anc" firstAttribute="leading" secondItem="iXI-EH-OS1" secondAttribute="leading" id="EFe-2e-LgB"/>
                                                     <constraint firstAttribute="bottom" secondItem="iXI-EH-OS1" secondAttribute="bottom" id="IHw-cH-eGr"/>
-                                                    <constraint firstItem="dWK-Jx-Anc" firstAttribute="top" secondItem="y0t-7b-fhh" secondAttribute="top" id="Kel-DN-NMU"/>
-                                                    <constraint firstItem="dWK-Jx-Anc" firstAttribute="leading" secondItem="SjL-KV-XGf" secondAttribute="trailing" constant="15" id="MzN-jb-ly2"/>
-                                                    <constraint firstItem="iXI-EH-OS1" firstAttribute="top" secondItem="dWK-Jx-Anc" secondAttribute="bottom" id="QBN-GV-0KB"/>
+                                                    <constraint firstItem="SjL-KV-XGf" firstAttribute="leading" secondItem="dWK-Jx-Anc" secondAttribute="trailing" constant="15" id="Ngn-j5-6rB"/>
+                                                    <constraint firstItem="dWK-Jx-Anc" firstAttribute="top" secondItem="SjL-KV-XGf" secondAttribute="top" id="Q3k-jq-shJ"/>
+                                                    <constraint firstItem="dWK-Jx-Anc" firstAttribute="bottom" secondItem="SjL-KV-XGf" secondAttribute="bottom" id="U9z-jz-leH"/>
                                                     <constraint firstItem="iXI-EH-OS1" firstAttribute="leading" secondItem="y0t-7b-fhh" secondAttribute="leading" id="auq-Rg-juS"/>
                                                     <constraint firstAttribute="trailing" secondItem="iXI-EH-OS1" secondAttribute="trailing" id="b9s-ch-67U"/>
-                                                    <constraint firstAttribute="trailing" secondItem="dWK-Jx-Anc" secondAttribute="trailing" id="j9N-Q0-0VY"/>
-                                                    <constraint firstItem="SjL-KV-XGf" firstAttribute="leading" secondItem="y0t-7b-fhh" secondAttribute="leading" id="jcj-56-4FS"/>
-                                                    <constraint firstItem="SjL-KV-XGf" firstAttribute="top" secondItem="y0t-7b-fhh" secondAttribute="top" id="mYs-Yf-Sbn"/>
+                                                    <constraint firstItem="dWK-Jx-Anc" firstAttribute="top" secondItem="y0t-7b-fhh" secondAttribute="top" id="qJp-Nl-7Yn"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
