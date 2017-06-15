@@ -32,6 +32,7 @@
 		FD4E7AF91E6B99C0007EEC0C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4E7AF81E6B99C0007EEC0C /* Map.storyboard */; };
 		FD4E7AFB1E6B99CD007EEC0C /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */; };
 		FD570E0B1E49289E00D8904C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD570E0A1E49289E00D8904C /* Constants.swift */; };
+		FD62E7641EF21C92004A18A3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62E7631EF21C92004A18A3 /* UserService.swift */; };
 		FD9CA3361E91FD9400164E21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD9CA3351E91FD9400164E21 /* GoogleService-Info.plist */; };
 		FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABA83D1E47C56600B817DA /* AppDelegate.swift */; };
 		FDABA8431E47C56600B817DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDABA8411E47C56600B817DA /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		FD4E7AF81E6B99C0007EEC0C /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = Storyboards/Map.storyboard; sourceTree = "<group>"; };
 		FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportViewController.swift; path = Controllers/ReportViewController.swift; sourceTree = "<group>"; };
 		FD570E0A1E49289E00D8904C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FD62E7631EF21C92004A18A3 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		FD9CA3351E91FD9400164E21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDABA83A1E47C56600B817DA /* HB141.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HB141.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABA83D1E47C56600B817DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				FD4E7AF01E6B634D007EEC0C /* FirebaseService.swift */,
 				FD4E7AF11E6B634D007EEC0C /* GoogleServices.swift */,
+				FD62E7631EF21C92004A18A3 /* UserService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				E313B5C41E9C6B08003E7CA1 /* PreviousReportsController.swift in Sources */,
 				FD37D6E31E9AB74A005B8F01 /* SettingsViewController.swift in Sources */,
 				FDABA8511E47C67400B817DA /* ViewController.swift in Sources */,
+				FD62E7641EF21C92004A18A3 /* UserService.swift in Sources */,
 				FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */,
 				FD03F98F1E74B72600528C9C /* MenuTableViewController.swift in Sources */,
 				F6C221941E5559E0004A532C /* BusinessViewController.swift in Sources */,

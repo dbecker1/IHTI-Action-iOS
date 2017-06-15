@@ -65,7 +65,7 @@ class FirebaseService : NSObject {
         return key
     }
     
-    private func convertSnapshot(snapshot: FIRDataSnapshot) -> FIRDataObject {
+    func convertSnapshot(snapshot: FIRDataSnapshot) -> FIRDataObject {
         switch table! {
         case FirebaseTable.users :
             let user = User(snapshot: snapshot)

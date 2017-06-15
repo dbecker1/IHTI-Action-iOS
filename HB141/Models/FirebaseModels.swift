@@ -11,7 +11,13 @@ import Firebase
 import FirebaseDatabase
 
 class User : FIRDataObject {
-    var reputation : Int?
+    public var Name : String = ""
+    public var Email : String = ""
+    public var IsActive : String = ""
+    
+    override func toDictionary() -> Dictionary<String, Any> {
+        return self.dictionaryWithValues(forKeys: ["Name", "Email", "IsActive"])
+    }
 }
 
 class Report : FIRDataObject {

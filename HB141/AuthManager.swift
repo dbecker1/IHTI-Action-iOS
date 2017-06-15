@@ -15,6 +15,8 @@ import FacebookLogin
 class AuthManager {
     static let shared = AuthManager()
     
+    var user : User = User()
+    
     func current() -> FIRUser? {
         return FIRAuth.auth()?.currentUser
     }
@@ -27,6 +29,7 @@ class AuthManager {
                     completion(false)
                 } else {
                     completion(true)
+                    self.loadUser()
                 }
             }
         }
@@ -54,24 +57,7 @@ class AuthManager {
                 if isSuccessful {
                     let current = self.current()
                     if (current?.email == nil) { // new user. get email from Facebook
-                        let params = ["fields" : "email"]
-                        let graphRequest = GraphRequest(graphPath: "me", parameters: params)
-                        graphRequest.start {
-                            (urlResponse, requestResult) in
-                            
-                            switch requestResult {
-                            case .failed(let error):
-                                print("error in graph request:", error)
-                                break
-                            case .success(let graphResponse):
-                                if let responseDictionary = graphResponse.dictionaryValue {
-                                    let email = responseDictionary["email"] as? String
-                                    
-                                    //TODO: Add check to see if previous user exists with this email, and then merge
-                                    current?.updateEmail(email!, completion: nil)
-                                }
-                            }
-                        }
+                        UserService.updateEmailFromFB()
                     }
                 }
             }
@@ -96,6 +82,7 @@ class AuthManager {
                             completion(false)
                         } else {
                             completion(true)
+                            self.loadUser()
                         }
                     }
                 }
@@ -111,6 +98,7 @@ class AuthManager {
                     completion(false)
                 } else {
                     completion(true)
+                    self.loadUser()
                 }
             }
         }
@@ -139,6 +127,7 @@ class AuthManager {
                     completion(false)
                 } else {
                     completion(true)
+                    self.loadUser()
                 }
             }
         }
@@ -190,10 +179,18 @@ class AuthManager {
                 if error != nil {
                     completion(false)
                 } else {
+                    self.loadUser()
                     completion(true)
+                    
                 }
             }
         }
     }
     
+    private func loadUser() {
+        UserService.createUserIfNecessary() {
+            (loadedUser) in
+            self.user = loadedUser
+        }
+    }
 }
