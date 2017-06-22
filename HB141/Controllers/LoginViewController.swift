@@ -11,7 +11,7 @@ import Firebase
 import GoogleSignIn
 import FacebookLogin
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate, GIDSignInDelegate {
+class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate, GIDSignInDelegate, UITextFieldDelegate {
     
 
     @IBOutlet weak var signUp: UIButton!
@@ -38,6 +38,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+        
+        Username.delegate = self
+        Password.delegate = self
         
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
@@ -72,6 +75,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
             AuthManager.shared.loginStandard(username: Username.text!, password: Password.text!) {
                 (isSuccessful) -> Void in
                 if isSuccessful {
+                    self.Password.resignFirstResponder()
                     self.toMain()
                 } else {
                     
@@ -128,6 +132,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         //Code for when user disconnects from app
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == Username  {
+            Username.resignFirstResponder()
+            Password.becomeFirstResponder()
+        } else {
+            Password.resignFirstResponder()
+        }
+        return true
     }
 }
 

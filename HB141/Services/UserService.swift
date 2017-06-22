@@ -58,14 +58,15 @@ class UserService {
     static func getUser(by email: String, result: ((User?) -> Void)!) {
         let ref = FIRDatabase.database().reference()
         let userRef = ref.child(FirebaseTable.users.rawValue)
-        let query = userRef.queryEqual(toValue: email, childKey: "email")
+        let query = userRef.queryOrdered(byChild: "Email").queryEqual(toValue: email)
         query.observeSingleEvent(of: .value, with: {
             (snapshot) in
             let service = FirebaseService(table: .users)
             if (!snapshot.exists()) {
                 result(nil)
             } else {
-                let user = service.convertSnapshot(snapshot: snapshot) as! User
+                let firstSnap = snapshot.children.allObjects[0] as! FIRDataSnapshot
+                let user = service.convertSnapshot(snapshot: firstSnap) as! User
                 result(user)
             }
         })
