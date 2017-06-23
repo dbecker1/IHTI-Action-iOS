@@ -13,6 +13,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var topBackground: UIView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var topLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ class MenuViewController: UIViewController {
             name.text = user.displayName
             email.text = user.email
         }
+        
+        let backgroundHeight = UIScreen.main.bounds.height * 0.35
+        let constraintHeight = (backgroundHeight - 170) / 2
+        topLogo.topAnchor.constraint(equalTo: topBackground.topAnchor, constant: constraintHeight).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

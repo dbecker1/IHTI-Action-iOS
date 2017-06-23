@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Vu-n6-rxq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Vu-n6-rxq">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -336,14 +336,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="logoncchr" translatesAutoresizingMaskIntoConstraints="NO" id="CUb-2P-deN">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" image="logoncchr" translatesAutoresizingMaskIntoConstraints="NO" id="CUb-2P-deN">
                                         <rect key="frame" x="8" y="17" width="213" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="mnu-4B-Qzn"/>
                                             <constraint firstAttribute="width" constant="213" id="wOB-bp-aJx"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="logoihti" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-r9-pKq">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" image="logoihti" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-r9-pKq">
                                         <rect key="frame" x="27" y="79" width="175" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="175" id="5iV-bz-FXJ"/>
@@ -356,7 +356,6 @@
                                     <constraint firstItem="2Nb-Nc-zjh" firstAttribute="top" secondItem="lFh-Tn-9gC" secondAttribute="bottom" constant="1" id="5wl-cH-P0e"/>
                                     <constraint firstItem="lFh-Tn-9gC" firstAttribute="leading" secondItem="2Nb-Nc-zjh" secondAttribute="leading" id="7LD-E1-Bj1"/>
                                     <constraint firstItem="CUb-2P-deN" firstAttribute="centerX" secondItem="J1e-r9-pKq" secondAttribute="centerX" id="9kU-Sm-0h3"/>
-                                    <constraint firstItem="CUb-2P-deN" firstAttribute="top" secondItem="2lW-B0-ekB" secondAttribute="top" constant="17" id="Mgy-ns-EtQ"/>
                                     <constraint firstItem="CUb-2P-deN" firstAttribute="leading" secondItem="2lW-B0-ekB" secondAttribute="leading" constant="8" id="Qea-Gj-h89"/>
                                     <constraint firstItem="J1e-r9-pKq" firstAttribute="top" secondItem="CUb-2P-deN" secondAttribute="bottom" constant="8" id="WPG-pf-I1U"/>
                                     <constraint firstAttribute="bottom" secondItem="2Nb-Nc-zjh" secondAttribute="bottom" constant="8" id="vOd-WE-DWZ"/>
@@ -386,6 +385,7 @@
                         <outlet property="email" destination="2Nb-Nc-zjh" id="NIN-R6-CVe"/>
                         <outlet property="name" destination="lFh-Tn-9gC" id="VcN-up-B92"/>
                         <outlet property="topBackground" destination="2lW-B0-ekB" id="ho4-Lt-2J1"/>
+                        <outlet property="topLogo" destination="CUb-2P-deN" id="WVA-w2-ff0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nj3-6Q-DuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
