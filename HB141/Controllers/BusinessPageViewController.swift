@@ -16,7 +16,7 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
     var navController : UINavigationController?
     var changeMap : MapViewChangeProtocol?
     
-    var businesses : [Business] = []
+    var businessIds : [String] = []
     
     var currentIndex : Int?
     var pendingIndex : Int?
@@ -33,21 +33,24 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
         view.bringSubview(toFront: pageControl)
     }
     
-    func setBusinesses(newBusinesses : [Business]) {
-        self.businesses = newBusinesses
+    func setBusinesses(newBusinessIds : [String]) {
+        self.businessIds = newBusinessIds
         
         pageController.setViewControllers([getViewController(atIndex: 0)], direction: .forward, animated: true, completion: nil)
         
-        changeMap?.moveMap(to: businesses[0].location!)
+        let firstBusiness = BusinessProvider.shared.getBusiness(forId: businessIds[0])
+        changeMap?.moveMap(to: (firstBusiness?.location!)!)
         
-        pageControl.numberOfPages = businesses.count
+        GooglePlacesService.loadImage(forId: (firstBusiness?.placeID!)!)
+        
+        pageControl.numberOfPages = businessIds.count
         pageControl.currentPage = 0
     }
     
     func getViewController(atIndex index: Int) -> BusinessViewController {
         let businessViewController = self.storyboard?.instantiateViewController(withIdentifier: "BusinessViewControllerID") as! BusinessViewController
         
-        businessViewController.business = businesses[index]
+        businessViewController.businessId = businessIds[index]
         businessViewController.index = index
         businessViewController.navController = self.navController
         
@@ -80,7 +83,7 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
         }
         
         index += 1
-        if (index == businesses.count) {
+        if (index == businessIds.count) {
             return nil
         }
         return getViewController(atIndex: index)
@@ -88,8 +91,14 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
     
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         let controller = pendingViewControllers.first as! BusinessViewController
-        pendingIndex = businesses.index(of: controller.business!)
-        changeMap?.moveMap(to: (controller.business?.location)!)
+        pendingIndex = businessIds.index(of: controller.businessId!)
+        
+        let business = BusinessProvider.shared.getBusiness(forId: controller.businessId!)
+        changeMap?.moveMap(to: (business?.location!)!)
+        
+        if (controller.imageView.image == nil) {
+            GooglePlacesService.loadImage(forId: controller.businessId!)
+        }
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -100,17 +109,5 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
             }
         }
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

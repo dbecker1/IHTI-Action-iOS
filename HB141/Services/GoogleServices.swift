@@ -11,16 +11,10 @@ import GooglePlaces
 
 class GooglePlacesService : NSObject {
     
-    var delegate : GooglePlacesDelegate
-    var placesClient : GMSPlacesClient!
-    var businesses = [Business]()
-    
-    init(delegate : GooglePlacesDelegate) {
-        self.delegate = delegate
-        self.placesClient = GMSPlacesClient.shared()
-    }
-    
-    func loadBusinesses() {
+    static func loadBusinesses(foundBusinesses: @escaping (([String]) -> Void)) {
+        let businessProvider = BusinessProvider.shared
+        var businessIds = [String]()
+        let placesClient = GMSPlacesClient.shared()
         placesClient.currentPlace() { (placeList, error) -> Void in
             if let error = error {
                 print("Pick Place error: \(error.localizedDescription)")
@@ -32,67 +26,38 @@ class GooglePlacesService : NSObject {
             if let placeList = placeList {
                 for i in 0...maxIndex {
                     let place = placeList.likelihoods[i]
-                    let business = Business()
-                    business.businessName = place.place.name.capitalized
-                    var types = place.place.types
-                    if let estIndex = types.index(of: "establishment") {
-                        types.remove(at: estIndex)
-                    }
-                    business.businessType = types.joined(separator: " | ").capitalized.replacingOccurrences(of: "_", with: " ")
-                    business.placeID = place.place.placeID
-                    business.businessAddress = place.place.formattedAddress
-                    business.businessPhone = place.place.phoneNumber
-                    business.businessWebsite = place.place.website?.absoluteString
-                    business.location = place.place.coordinate
-                    self.businesses.append(business)
+                    let business = Business(place: place)
+                    businessProvider.addBusiness(newBusiness: business)
+                    businessIds.append(business.placeID!)
                     print("\(business.businessName!)")
                 }
             }
             
-            self.loadImages(index: 0, maxIndex: maxIndex)
+            foundBusinesses(businessIds)
         }
 
     }
     
-    func loadImages(index : Int, maxIndex: Int) {
-        let business = businesses[index]
-        placesClient.lookUpPhotos(forPlaceID: business.placeID!) { (photos, error) -> Void in
+    static func loadImage(forId businessId: String) {
+        let placesClient = GMSPlacesClient.shared()
+        print("Loading image for business: \(businessId)")
+        placesClient.lookUpPhotos(forPlaceID: businessId) {
+            (photos, error) -> Void in
             if let error = error {
-                print("Error: \(error.localizedDescription)")
+                print("Error loading image: \(error.localizedDescription)")
             } else {
                 if let firstPhoto = photos?.results.first {
-                    self.placesClient.loadPlacePhoto(firstPhoto, callback: {
+                    placesClient.loadPlacePhoto(firstPhoto) {
                         (image, e) -> Void in
                         if let e = e {
-                            print("Error: \(e.localizedDescription)")
+                            print("Error loading image: \(e.localizedDescription)")
                         } else {
-                            business.image = image;
+                            BusinessProvider.shared.updateImage(forId: businessId, newImage: image)
                         }
-                        
-                        if(index == maxIndex) {
-                            self.delegate.foundBusinesses(businesses: self.businesses)
-                        } else {
-                            let newIndex = index + 1
-                            if (newIndex == 19) {
-                                print("here")
-                            }
-                            self.loadImages(index: newIndex, maxIndex: maxIndex)
-                        }
-                    })
-                } else {
-                    if(index == GoogleConstants.businessCount - 1) {
-                        self.delegate.foundBusinesses(businesses: self.businesses)
-                    } else {
-                        let newIndex = index + 1
-                        self.loadImages(index: newIndex, maxIndex: maxIndex)
                     }
                 }
             }
-            
         }
     }
-}
-
-protocol GooglePlacesDelegate {
-    func foundBusinesses(businesses : [Business])
+    
 }

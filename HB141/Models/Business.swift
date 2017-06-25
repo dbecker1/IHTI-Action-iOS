@@ -9,8 +9,24 @@
 import Foundation
 import UIKit
 import MapKit
+import GooglePlaces
 
 class Business : NSObject {
+    init(place: GMSPlaceLikelihood) {
+        self.businessName = place.place.name.capitalized
+        var types = place.place.types
+        if let estIndex = types.index(of: "establishment") {
+            types.remove(at: estIndex)
+        }
+        self.businessType = types.joined(separator: " | ").capitalized.replacingOccurrences(of: "_", with: " ")
+        self.placeID = place.place.placeID
+        self.businessAddress = place.place.formattedAddress
+        self.businessPhone = place.place.phoneNumber
+        self.businessWebsite = place.place.website?.absoluteString
+        self.location = place.place.coordinate
+        
+    }
+    
     var businessName : String?
     var businessType : String?
     var businessAddress : String?

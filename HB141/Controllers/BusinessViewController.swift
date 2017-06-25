@@ -19,14 +19,15 @@ class BusinessViewController: UIViewController {
 
     var index: Int = 0
     
-    var business : Business?
+    private var business : Business?
+    
+    var businessId : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = business?.businessName
-        typeLabel.text = business?.businessType
-        imageView.image = business?.image
-
+        business = BusinessProvider.shared.getBusiness(forId: businessId!)
+        updateView()
+        
         imageView.isUserInteractionEnabled = true
         let singletap = UITapGestureRecognizer(target: self, action: #selector(showReport))
         self.view.addGestureRecognizer(singletap)
@@ -40,6 +41,32 @@ class BusinessViewController: UIViewController {
         let constraint = NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: toView, attribute: .trailing, multiplier: 1, constant: 10)
         
         view.addConstraint(constraint)
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(forName: Notification.Name(rawValue:"BusinessUpdate"), object: nil, queue: nil, using: updatedBusiness)
+    }
+    
+    func hasImage() -> Bool {
+        return business!.image != nil
+    }
+    
+    private func updateView() {
+        nameLabel.text = business?.businessName
+        typeLabel.text = business?.businessType
+        imageView.image = business?.image
+    }
+    
+    private func updatedBusiness(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let id  = userInfo["businessId"] as? String else {
+                print("No userInfo found in notification")
+                return
+        }
+        
+        if (id == businessId) {
+            business = BusinessProvider.shared.getBusiness(forId: businessId!)
+            updateView()
+        }
     }
     
     func showReport() {
@@ -59,12 +86,4 @@ class BusinessViewController: UIViewController {
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-
 }

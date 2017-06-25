@@ -35,9 +35,6 @@ class MapViewController : UIViewController {
         self.view.addSubview(pageViewContainer)
         self.view.bringSubview(toFront: pageViewContainer)
         
-        let services = GooglePlacesService(delegate: self)
-        services.loadBusinesses()
-        
         self.title = "Choose Location"
         
         self.navigationController?.navigationBar.tintColor = UIColor.white;
@@ -64,6 +61,16 @@ class MapViewController : UIViewController {
     func showSuccessfulToast() -> Void {
         self.view.makeToast("Report Successfully Submitted.")
     }
+    
+    func businessesLoaded(businessIds : [String]) {
+        if let pageController = pageViewController {
+            pageController.setBusinesses(newBusinessIds: businessIds)
+            if(overlayView != nil && view.subviews.contains(overlayView)) {
+                overlayView.removeFromSuperview()
+            }
+            pageViewContainer.isHidden = false
+        }
+    }
 }
 
 
@@ -87,23 +94,8 @@ extension MapViewController: CLLocationManagerDelegate {
             
             if !businessesLoaded {
                 businessesLoaded = true
-                let services = GooglePlacesService(delegate: self)
-                services.loadBusinesses()
+                GooglePlacesService.loadBusinesses(foundBusinesses: businessesLoaded)
             }
-        }
-    }
-}
-
-extension MapViewController : GooglePlacesDelegate {
-    func foundBusinesses(businesses: [Business]) {
-        print(businesses)
-        
-        if let pageController = pageViewController {
-            pageController.setBusinesses(newBusinesses: businesses)
-            if(overlayView != nil && view.subviews.contains(overlayView)) {
-                overlayView.removeFromSuperview()
-            }
-            pageViewContainer.isHidden = false
         }
     }
 }
