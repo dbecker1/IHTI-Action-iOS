@@ -523,7 +523,7 @@
 				DEVELOPMENT_TEAM = 747D5A442U;
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.action;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HB141-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -541,7 +541,7 @@
 				DEVELOPMENT_TEAM = 747D5A442U;
 				INFOPLIST_FILE = HB141/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.hb141;
+				PRODUCT_BUNDLE_IDENTIFIER = org.theihti.action;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HB141-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
