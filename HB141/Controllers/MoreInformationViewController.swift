@@ -36,7 +36,7 @@ class MoreInformationViewController: UIViewController, UIWebViewDelegate {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
 
-        let url = URL(string: "http://theihti.org/")
+        let url = URL(string: WebConstants.ihtiWebsite)
         let requestObj = URLRequest(url: url!)
         webView.loadRequest(requestObj);
         

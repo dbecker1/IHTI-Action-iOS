@@ -32,9 +32,9 @@
 		FD4E7AF51E6B6355007EEC0C /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AF41E6B6355007EEC0C /* FirebaseModels.swift */; };
 		FD4E7AF91E6B99C0007EEC0C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4E7AF81E6B99C0007EEC0C /* Map.storyboard */; };
 		FD4E7AFB1E6B99CD007EEC0C /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */; };
+		FD4F25D11F01F18800809120 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4F25D01F01F18800809120 /* GoogleService-Info.plist */; };
 		FD570E0B1E49289E00D8904C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD570E0A1E49289E00D8904C /* Constants.swift */; };
 		FD62E7641EF21C92004A18A3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62E7631EF21C92004A18A3 /* UserService.swift */; };
-		FD9CA3361E91FD9400164E21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD9CA3351E91FD9400164E21 /* GoogleService-Info.plist */; };
 		FDABA83E1E47C56600B817DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABA83D1E47C56600B817DA /* AppDelegate.swift */; };
 		FDABA8431E47C56600B817DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDABA8411E47C56600B817DA /* Main.storyboard */; };
 		FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDABA8461E47C56600B817DA /* LaunchScreen.storyboard */; };
@@ -78,9 +78,9 @@
 		FD4E7AF41E6B6355007EEC0C /* FirebaseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseModels.swift; path = Models/FirebaseModels.swift; sourceTree = "<group>"; };
 		FD4E7AF81E6B99C0007EEC0C /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = Storyboards/Map.storyboard; sourceTree = "<group>"; };
 		FD4E7AFA1E6B99CD007EEC0C /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportViewController.swift; path = Controllers/ReportViewController.swift; sourceTree = "<group>"; };
+		FD4F25D01F01F18800809120 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD570E0A1E49289E00D8904C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FD62E7631EF21C92004A18A3 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
-		FD9CA3351E91FD9400164E21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDABA83A1E47C56600B817DA /* HB141.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HB141.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABA83D1E47C56600B817DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDABA8421E47C56600B817DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		FDABA83C1E47C56600B817DA /* HB141 */ = {
 			isa = PBXGroup;
 			children = (
-				FD9CA3351E91FD9400164E21 /* GoogleService-Info.plist */,
+				FD4F25D01F01F18800809120 /* GoogleService-Info.plist */,
 				FDF59CBE1E74AE2400352DC4 /* Resources */,
 				FD2928931E5159580060A544 /* Services */,
 				FDC517371E4D77E200C5D430 /* Models */,
@@ -302,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4F25D11F01F18800809120 /* GoogleService-Info.plist in Resources */,
 				FDABA8481E47C56600B817DA /* LaunchScreen.storyboard in Resources */,
 				949017461E8F3B530066D3AC /* Registration.storyboard in Resources */,
 				FD37D6DF1E9AB73A005B8F01 /* Assets.xcassets in Resources */,
@@ -311,7 +312,6 @@
 				FDEA130E1E47FCC400868634 /* Login.storyboard in Resources */,
 				E3EC62CF1E6B86B3005B12F2 /* Changa 800.ttf in Resources */,
 				FDEA130C1E47FC5100868634 /* Onboarding.storyboard in Resources */,
-				FD9CA3361E91FD9400164E21 /* GoogleService-Info.plist in Resources */,
 				FDF59CBB1E749CE800352DC4 /* FontAwesome.otf in Resources */,
 				E3EC62CE1E6B86B3005B12F2 /* Changa 200.ttf in Resources */,
 				E313B5C21E9C6522003E7CA1 /* PreviousReports.storyboard in Resources */,

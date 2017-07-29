@@ -57,5 +57,11 @@ struct GoogleConstants {
     
     static let businessCount = 10
     
-    static let dateFormat = "M/d/yy h:mm a" 
+    static let dateFormat = "M/d/yy h:mm a"
+    
+    static let applicablePlaces = ["casino", "airport", "bus_station", "bar", "night_club", "transit_station", "train_station", "hospital", "health", "spa"]
+}
+
+struct WebConstants {
+    static let ihtiWebsite = "http://theihti.org/"
 }

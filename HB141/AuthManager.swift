@@ -82,7 +82,7 @@ class AuthManager {
                             completion(false)
                         } else {
                             completion(true)
-                            self.loadUser()
+                            self.createUser()
                         }
                     }
                 }
@@ -98,7 +98,7 @@ class AuthManager {
                     completion(false)
                 } else {
                     completion(true)
-                    self.loadUser()
+                    //self.loadUser() UPDATE USER
                 }
             }
         }
@@ -127,7 +127,7 @@ class AuthManager {
                     completion(false)
                 } else {
                     completion(true)
-                    self.loadUser()
+                    //self.loadUser() UPDATE USER
                 }
             }
         }
@@ -181,16 +181,22 @@ class AuthManager {
                 } else {
                     self.loadUser()
                     completion(true)
-                    
                 }
             }
         }
     }
     
+    private func createUser() {
+        UserService.createUser() {
+            (user) in
+            self.user = user
+        }
+    }
+    
     private func loadUser() {
-        UserService.createUserIfNecessary() {
-            (loadedUser) in
-            self.user = loadedUser
+        UserService.getUser(by: (current()?.email)!) {
+            (user) in
+            self.user = user!
         }
     }
 }

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>490817557089-1ls48dng0gt8ldm0g2ulnukv3m3vffkp.apps.googleusercontent.com</string>
+	<string>490817557089-eofekvs87nvformo8dcmn7ime08ipb6s.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.490817557089-1ls48dng0gt8ldm0g2ulnukv3m3vffkp</string>
+	<string>com.googleusercontent.apps.490817557089-eofekvs87nvformo8dcmn7ime08ipb6s</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCWIATB3DngItwMNK0Y2I0McAEkE7u_yp8</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.theihti.HB141</string>
+	<string>org.theihti.action</string>
 	<key>PROJECT_ID</key>
 	<string>hb141-2fc0d</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:490817557089:ios:7f171132deeaa511</string>
+	<string>1:490817557089:ios:814aff0dfebfa0ca</string>
 	<key>DATABASE_URL</key>
 	<string>https://hb141-2fc0d.firebaseio.com</string>
 </dict>

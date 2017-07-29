@@ -22,14 +22,22 @@ class GooglePlacesService : NSObject {
             }
             let x = GoogleConstants.businessCount
             let y = (placeList?.likelihoods.count)!
-            let maxIndex = min(x, y) - 1
+            var maxIndex = min(x, y) - 1
             if let placeList = placeList {
-                for i in 0...maxIndex {
+                var i = 0
+                while i < maxIndex {
                     let place = placeList.likelihoods[i]
+                    let filter = place.place.types.filter() { GoogleConstants.applicablePlaces.contains($0) }
+                    if filter.count == 0 {
+                        maxIndex = min(maxIndex + 1, placeList.likelihoods.count)
+                        i = i + 1
+                        continue
+                    }
                     let business = Business(place: place)
                     businessProvider.addBusiness(newBusiness: business)
                     businessIds.append(business.placeID!)
                     print("\(business.businessName!)")
+                    i = i + 1
                 }
             }
             

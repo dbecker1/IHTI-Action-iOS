@@ -33,24 +33,18 @@ class UserService {
         }
     }
     
-    static func createUserIfNecessary(result: ((User) -> Void)!) {
+    static func createUser(result: ((User) -> Void)?) {
         let current = AuthManager.shared.current()
         if current?.email != nil {
-            getUser(by: current!.email!) {
-                (user) in
-                if user == nil {
-                    let service = FirebaseService(table: .users)
-                    let newUser = User()
-                    newUser.Email = current!.email!
-                    newUser.Name = current!.displayName!
-                    newUser.IsActive = "true"
-                    let key = service.getKey()
-                    service.enterData(forIdentifier: key, data: newUser)
-                    result(newUser)
-                } else {
-                    result(user!)
-                }
-                // TODO: ADD UPDATE ABILITIES
+            let service = FirebaseService(table: .users)
+            let newUser = User()
+            newUser.Email = current!.email!
+            newUser.Name = current!.displayName!
+            newUser.IsActive = "true"
+            let key = AuthManager.shared.current()?.uid
+            service.enterData(forIdentifier: key!, data: newUser)
+            if result != nil {
+                result!(newUser)
             }
         }
     }
@@ -58,17 +52,12 @@ class UserService {
     static func getUser(by email: String, result: ((User?) -> Void)!) {
         let ref = FIRDatabase.database().reference()
         let userRef = ref.child(FirebaseTable.users.rawValue)
-        let query = userRef.queryOrdered(byChild: "Email").queryEqual(toValue: email)
-        query.observeSingleEvent(of: .value, with: {
-            (snapshot) in
-            let service = FirebaseService(table: .users)
-            if (!snapshot.exists()) {
-                result(nil)
-            } else {
-                let firstSnap = snapshot.children.allObjects[0] as! FIRDataSnapshot
-                let user = service.convertSnapshot(snapshot: firstSnap) as! User
+        let service = FirebaseService(table: .users)
+        service.retrieveData(forIdentifier: (AuthManager.shared.current()?.uid)!) {
+            (user) in
+            if let user = user as? User {
                 result(user)
             }
-        })
+        }
     }
 }
