@@ -14,6 +14,7 @@ import FacebookLogin
 class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate, GIDSignInDelegate, UITextFieldDelegate {
     
 
+    @IBOutlet weak var invalidLogIn: UILabel!
     @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var forgotPassword: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
@@ -78,7 +79,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, LoginButtonDel
                     self.Password.resignFirstResponder()
                     self.toMain()
                 } else {
-                    
+                    self.invalidLogIn.isHidden = false
                 }
             }
         }

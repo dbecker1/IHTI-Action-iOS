@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Or-qS-IrR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Or-qS-IrR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -113,6 +113,15 @@
                                     <constraint firstAttribute="height" constant="35" id="P9w-gs-LHb"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid username / password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G1-2H-z8a">
+                                <rect key="frame" x="79" y="98" width="217" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lcB-W5-dEu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.4524102807" green="0.14640459419999999" blue="0.61392682789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -122,6 +131,7 @@
                             <constraint firstItem="9Bq-hI-hNK" firstAttribute="top" secondItem="tW1-gg-ozX" secondAttribute="bottom" constant="31" id="ANg-aR-n4S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p1i-qZ-Z4c" secondAttribute="trailing" id="DJX-uG-HHt"/>
                             <constraint firstItem="EIO-Db-V51" firstAttribute="leading" secondItem="QwC-r4-Dgr" secondAttribute="trailing" constant="-46" id="Dtp-eS-8aF"/>
+                            <constraint firstItem="5G1-2H-z8a" firstAttribute="centerX" secondItem="FWD-Ox-t9h" secondAttribute="centerX" id="HpT-eZ-bHJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="p1i-qZ-Z4c" secondAttribute="leading" id="IPh-U6-XhJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hXU-dj-30X" secondAttribute="trailing" id="Lyv-5V-Zau"/>
                             <constraint firstItem="ko1-YU-apx" firstAttribute="top" secondItem="BPQ-jn-Hsq" secondAttribute="bottom" constant="40" id="Mjq-n5-mcN"/>
@@ -129,10 +139,12 @@
                             <constraint firstItem="hXU-dj-30X" firstAttribute="top" secondItem="p1i-qZ-Z4c" secondAttribute="bottom" constant="20" id="ZXe-3r-M5r"/>
                             <constraint firstAttribute="leadingMargin" secondItem="BPQ-jn-Hsq" secondAttribute="leading" id="ajO-XI-bkJ"/>
                             <constraint firstItem="GTZ-Gr-slR" firstAttribute="centerY" secondItem="QwC-r4-Dgr" secondAttribute="centerY" id="dEk-lZ-7Cc"/>
+                            <constraint firstItem="p1i-qZ-Z4c" firstAttribute="top" secondItem="5G1-2H-z8a" secondAttribute="bottom" constant="6" id="kdJ-ZC-wwb"/>
                             <constraint firstItem="GTZ-Gr-slR" firstAttribute="leading" secondItem="QwC-r4-Dgr" secondAttribute="trailing" constant="44" id="lXl-gK-2Kp"/>
                             <constraint firstItem="ko1-YU-apx" firstAttribute="centerX" secondItem="FWD-Ox-t9h" secondAttribute="centerX" id="rLk-9S-AYs"/>
                             <constraint firstItem="LLY-Bn-IIW" firstAttribute="top" secondItem="ko1-YU-apx" secondAttribute="bottom" constant="21" id="rhp-2Z-BeH"/>
                             <constraint firstItem="9Bq-hI-hNK" firstAttribute="centerX" secondItem="FWD-Ox-t9h" secondAttribute="centerX" id="sJE-X8-qJJ"/>
+                            <constraint firstItem="5G1-2H-z8a" firstAttribute="top" secondItem="9Bq-hI-hNK" secondAttribute="bottom" constant="8" id="sWN-q0-c50"/>
                             <constraint firstItem="BPQ-jn-Hsq" firstAttribute="top" secondItem="QwC-r4-Dgr" secondAttribute="bottom" constant="19" id="uJ5-5E-uWU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BPQ-jn-Hsq" secondAttribute="trailing" id="wOe-cr-3kW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hXU-dj-30X" secondAttribute="leading" id="wVn-Kl-YjT"/>
@@ -144,6 +156,7 @@
                         <outlet property="Username" destination="p1i-qZ-Z4c" id="gXw-5i-Pg4"/>
                         <outlet property="facebookLoginContainer" destination="LLY-Bn-IIW" id="bjg-rt-BaS"/>
                         <outlet property="forgotPassword" destination="QwC-r4-Dgr" id="nXu-Mr-gKz"/>
+                        <outlet property="invalidLogIn" destination="5G1-2H-z8a" id="mK5-Ey-X0h"/>
                         <outlet property="logoImage" destination="9Bq-hI-hNK" id="cTE-sk-a6G"/>
                         <outlet property="signUp" destination="GTZ-Gr-slR" id="6Px-4Y-HVN"/>
                         <segue destination="0dd-bt-Din" kind="show" identifier="toMain" id="HPl-iE-U7u"/>

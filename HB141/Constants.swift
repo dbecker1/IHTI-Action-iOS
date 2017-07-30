@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+struct SystemConstants {
+    static let debug = false
+}
+
 struct ColorConstants {
     
     static let gradientPrimary = UIColor(red: 116/255, green: 38/255, blue: 158/255, alpha: 1.0)

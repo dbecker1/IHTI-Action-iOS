@@ -50,8 +50,6 @@ class UserService {
     }
     
     static func getUser(by email: String, result: ((User?) -> Void)!) {
-        let ref = FIRDatabase.database().reference()
-        let userRef = ref.child(FirebaseTable.users.rawValue)
         let service = FirebaseService(table: .users)
         service.retrieveData(forIdentifier: (AuthManager.shared.current()?.uid)!) {
             (user) in

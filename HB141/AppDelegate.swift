@@ -21,7 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
+        
+        var googleInfoFilePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
+        
+        if (SystemConstants.debug) {
+            googleInfoFilePath = Bundle.main.path(forResource: "GoogleService-Info_dev", ofType: "plist")
+        }
+        
+        let options = FIROptions(contentsOfFile: googleInfoFilePath)
+        FIRApp.configure(with: options!)
         
         GMSServices.provideAPIKey(GoogleConstants.mapsApiKey)
         

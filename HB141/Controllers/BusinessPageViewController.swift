@@ -45,6 +45,8 @@ class BusinessPageViewController: UIViewController, UIPageViewControllerDataSour
         
         pageControl.numberOfPages = businessIds.count
         pageControl.currentPage = 0
+        pageControl.currentPageIndicatorTintColor = ColorConstants.titleBarColor
+        pageControl.pageIndicatorTintColor = ColorConstants.titleBarColor.withAlphaComponent(0.25)
     }
     
     func getViewController(atIndex index: Int) -> BusinessViewController {
