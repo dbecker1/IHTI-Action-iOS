@@ -20,6 +20,7 @@ class SettingsTableViewController: UITableViewController, GIDSignInDelegate, GID
     @IBOutlet weak var user_email: UIButton!
     @IBOutlet weak var hasFaceBookCheckmark: UIImageView!
     @IBOutlet weak var hasGoogleCheckmark: UIImageView!
+    @IBOutlet weak var changePassword: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,9 @@ class SettingsTableViewController: UITableViewController, GIDSignInDelegate, GID
             clickToAddGoogle.isHidden = false
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.addGoogle))
             clickToAddGoogle.addGestureRecognizer(tap)
+        }
+        if (!AuthManager.shared.userHasStandard()) {
+            changePassword.isHidden = true
         }
     }
 

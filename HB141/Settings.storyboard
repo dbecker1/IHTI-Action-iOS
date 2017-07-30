@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MAW-tM-X8C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MAW-tM-X8C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3I-qp-l3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="189.59999999999999" y="504.19790104947532"/>
+            <point key="canvasLocation" x="1913" y="-206"/>
         </scene>
         <!--Title-->
         <scene sceneID="yCv-eg-iJn">
@@ -112,12 +112,12 @@
                                                     <state key="normal" title="current name">
                                                         <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <segue destination="QJQ-Cl-Zhb" kind="show" identifier="setName" id="smD-xW-nNW"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="QJQ-Cl-Zhb" kind="show" identifier="setName" id="5Fx-2T-fUM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kJD-uH-m1O">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -147,11 +147,13 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="user_email" destination="wHp-Nn-E5U" eventType="touchUpInside" id="zUu-dE-Xaz"/>
-                                                        <segue destination="QJQ-Cl-Zhb" kind="show" identifier="setEmail" id="4hL-3s-V3i"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="QJQ-Cl-Zhb" kind="show" identifier="setEmail" id="9R6-Yq-vWk"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="r73-yD-IdN">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
@@ -171,12 +173,12 @@
                                                     <rect key="frame" x="347" y="8" width="20" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" backgroundImage="Forward-50"/>
-                                                    <connections>
-                                                        <segue destination="QJQ-Cl-Zhb" kind="show" identifier="setPass" id="7g6-vj-sgk"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="QJQ-Cl-Zhb" kind="show" identifier="setPass" id="jlW-4V-ODf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -287,6 +289,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="zDp-ci-Y9e"/>
                     <connections>
+                        <outlet property="changePassword" destination="r73-yD-IdN" id="iNP-ZY-bgh"/>
                         <outlet property="clickToAddFacebook" destination="7n2-sF-GU6" id="5YO-Zu-zaG"/>
                         <outlet property="clickToAddGoogle" destination="Lbj-Hh-xx1" id="YAa-Cr-mJ3"/>
                         <outlet property="hasFaceBookCheckmark" destination="lBy-0H-gmw" id="fx3-Qp-W7h"/>
@@ -305,6 +308,6 @@
         <image name="Forward-50" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4hL-3s-V3i"/>
+        <segue reference="jlW-4V-ODf"/>
     </inferredMetricsTieBreakers>
 </document>
