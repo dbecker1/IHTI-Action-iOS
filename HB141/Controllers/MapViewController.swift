@@ -63,12 +63,20 @@ class MapViewController : UIViewController {
     }
     
     func businessesLoaded(businessIds : [String]) {
-        if let pageController = pageViewController {
-            pageController.setBusinesses(newBusinessIds: businessIds)
-            if(overlayView != nil && view.subviews.contains(overlayView)) {
-                overlayView.removeFromSuperview()
+        if businessIds.count == 0 {
+            let navController = self.navigationController
+            if navController != nil {
+                let destination = self.storyboard?.instantiateViewController(withIdentifier: "noBusinesses")
+                navController?.popViewController(animated: false)
+                navController?.pushViewController(destination!, animated: false)
             }
+        } else if let pageController = pageViewController {
+            pageController.setBusinesses(newBusinessIds: businessIds)
             pageViewContainer.isHidden = false
+        }
+        
+        if(overlayView != nil && view.subviews.contains(overlayView)) {
+            overlayView.removeFromSuperview()
         }
     }
 }

@@ -76,6 +76,41 @@
             </objects>
             <point key="canvasLocation" x="1008.8" y="177.66116941529236"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="1Tk-Kv-LWr">
+            <objects>
+                <viewController storyboardIdentifier="noBusinesses" id="huz-Vs-5Hw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eX1-8N-XXE"/>
+                        <viewControllerLayoutGuide type="bottom" id="An9-An-sb9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tbk-Sc-Ttw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no nearby businesses that apply to the HB 141 Law." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6D-rf-MTj">
+                                <rect key="frame" x="16" y="296" width="343" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="3ll-EA-G4l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="d6D-rf-MTj" secondAttribute="trailing" id="2YL-sb-2I1"/>
+                            <constraint firstItem="d6D-rf-MTj" firstAttribute="centerX" secondItem="tbk-Sc-Ttw" secondAttribute="centerX" id="BKp-U2-TPG"/>
+                            <constraint firstItem="d6D-rf-MTj" firstAttribute="centerY" secondItem="tbk-Sc-Ttw" secondAttribute="centerY" id="WAB-vY-Aqw"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="d6D-rf-MTj" secondAttribute="leading" id="fRn-Gz-g00"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdr-on-Ehe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="935.98200899550227"/>
+        </scene>
         <!--Business Page View Controller-->
         <scene sceneID="BC0-TR-WQ4">
             <objects>

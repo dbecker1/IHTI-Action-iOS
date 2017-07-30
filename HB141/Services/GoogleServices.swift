@@ -36,7 +36,6 @@ class GooglePlacesService : NSObject {
                     let business = Business(place: place)
                     businessProvider.addBusiness(newBusiness: business)
                     businessIds.append(business.placeID!)
-                    print("\(business.businessName!)")
                     i = i + 1
                 }
             }
