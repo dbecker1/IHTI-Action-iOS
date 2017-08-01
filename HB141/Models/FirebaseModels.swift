@@ -32,7 +32,7 @@ class Report : FIRDataObject {
     public var establishment: Establishment? = nil
     
     override func toDictionary() -> Dictionary<String, Any> {
-        return self.dictionaryWithValues(forKeys: ["Comment", "Datetime", "EID", "No View", "Public View", "Restroom View", "VID"])
+        return ["Comment" : Comment, "Datetime" : Datetime, "EID" : EID, "No View" : NoView, "Public View" : PublicView, "Restroom View" : RestroomView, "VID" : VID]
     }
 }
 

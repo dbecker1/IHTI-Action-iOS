@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ReportViewController: UIViewController {
+class ReportViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var report_name: UILabel!
@@ -46,7 +46,11 @@ class ReportViewController: UIViewController {
         submit_label.layer.shadowOffset=CGSize(width: 0.5, height: 1)
         submit_label.layer.shadowRadius = 2.0
         submit_label.layer.shadowOpacity = 0.375
+        comments.delegate = self
         // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ReportViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ReportViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,10 +100,10 @@ class ReportViewController: UIViewController {
                 if let establishment = object as? Establishment {
                     if establishment.Name == "" {
                         let newEstablishment = Establishment()
-                        newEstablishment.Name = (self.business?.businessName)!
-                        newEstablishment.Address = (self.business?.businessAddress)!
-                        newEstablishment.PhoneNumber = (self.business?.businessPhone)!
-                        newEstablishment.Website = (self.business?.businessWebsite)!
+                        newEstablishment.Name = (self.business?.businessName ?? "")!
+                        newEstablishment.Address = (self.business?.businessAddress ?? "")!
+                        newEstablishment.PhoneNumber = (self.business?.businessPhone ?? "")!
+                        newEstablishment.Website = (self.business?.businessWebsite ?? "")!
                         service.enterData(forIdentifier: id, data: newEstablishment)
                     }
                 }
@@ -126,6 +130,26 @@ class ReportViewController: UIViewController {
         return true;
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 64.0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
