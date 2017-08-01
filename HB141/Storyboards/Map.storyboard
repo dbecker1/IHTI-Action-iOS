@@ -89,10 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no nearby businesses that must follow the HB141 law." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6D-rf-MTj">
-                                <rect key="frame" x="16" y="296" width="343" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="3ll-EA-G4l"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="313" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +98,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="d6D-rf-MTj" secondAttribute="trailing" id="2YL-sb-2I1"/>
-                            <constraint firstItem="d6D-rf-MTj" firstAttribute="centerX" secondItem="tbk-Sc-Ttw" secondAttribute="centerX" id="BKp-U2-TPG"/>
                             <constraint firstItem="d6D-rf-MTj" firstAttribute="centerY" secondItem="tbk-Sc-Ttw" secondAttribute="centerY" id="WAB-vY-Aqw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="d6D-rf-MTj" secondAttribute="leading" id="fRn-Gz-g00"/>
                         </constraints>
