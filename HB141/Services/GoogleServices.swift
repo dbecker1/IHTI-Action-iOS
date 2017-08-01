@@ -11,9 +11,8 @@ import GooglePlaces
 
 class GooglePlacesService : NSObject {
     
-    static func loadBusinesses(foundBusinesses: @escaping (([String]) -> Void)) {
+    static func loadBusinesses(foundBusinesses: @escaping (([String]) -> Void), page : Int = 1) {
         let businessProvider = BusinessProvider.shared
-        var businessIds = [String]()
         let placesClient = GMSPlacesClient.shared()
         placesClient.currentPlace() { (placeList, error) -> Void in
             if let error = error {
@@ -35,12 +34,11 @@ class GooglePlacesService : NSObject {
                     }
                     let business = Business(place: place)
                     businessProvider.addBusiness(newBusiness: business)
-                    businessIds.append(business.placeID!)
                     i = i + 1
                 }
             }
             
-            foundBusinesses(businessIds)
+            foundBusinesses(businessProvider.getBusinessIds())
         }
 
     }

@@ -40,6 +40,22 @@ class BusinessProvider {
         return nil
     }
     
+    func getBusinessIds() -> [String] {
+        var ids = [String]()
+        
+        for business in businesses {
+            if business != nil {
+                ids.append((business?.placeID)!)
+            }
+        }
+        
+        return ids
+    }
+    
+    func getBusinessCount() -> Int {
+        return businesses.count
+    }
+    
     private func sendUpdateNotification(businessId: String) {
         let nc = NotificationCenter.default
         nc.post(name: Notification.Name(rawValue:"BusinessUpdate"), object: nil, userInfo: ["businessId" : businessId])
