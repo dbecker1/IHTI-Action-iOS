@@ -13,6 +13,7 @@ class GooglePlacesService : NSObject {
     
     static func loadBusinesses(foundBusinesses: @escaping (([String]) -> Void), page : Int = 1) {
         let businessProvider = BusinessProvider.shared
+        businessProvider.clearBusinesses()
         let placesClient = GMSPlacesClient.shared()
         placesClient.currentPlace() { (placeList, error) -> Void in
             if let error = error {

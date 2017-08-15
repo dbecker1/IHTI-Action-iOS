@@ -17,6 +17,10 @@ class BusinessProvider {
         self.businesses = [Business?](repeating: nil, count: GoogleConstants.businessCount)
     }
     
+    func clearBusinesses() {
+        self.businesses = [Business?](repeating: nil, count: GoogleConstants.businessCount)
+    }
+    
     func addBusiness(newBusiness: Business) {
         businesses.append(newBusiness)
         
